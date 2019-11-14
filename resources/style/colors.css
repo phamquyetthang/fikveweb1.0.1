@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	color: #65509e;
+	color: #815fdd;
+	color: #33284e;
+	color: #281942;
+	color: #fcfcfc;
+	color: #A1C3D1;
+	color: #B39BC8;
+	color: #F0EBF4;
+	color: #F172A1;
+	color: #E64398;
+}
+*{
+	color: white;
+}
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+/* *{
+	color: black;
+} */
+
+
+.img1{
+	background-image: url(../img/thuy1.jpg);
+}
+.img2{
+	background-image: url(../img/trang1.jpg);
+}
+.img3{
+	background-image: url(../img/thuong1.jpg);
+}
+.img4{
+	background-image: url(../img/son1.jpg);
+}
+
+
+.img5{
+	background-image: url(../img/vic1.jpg);
+}
+.img6{
+	background-image: url(../img/phuc1.jpg);
+}
+
+.img7{
+	background-image: url(../img/tuyen1.jpg);
+}
+
+.report{
+	/* background-color: white; */
+	/* opacity: 0.1; */
+	color: #000;
+	background-color: unset;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	float: right;
+}

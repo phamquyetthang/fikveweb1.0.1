@@ -17,7 +17,7 @@ if (isset($_POST)) { // Kiểm tra tồn tại post request
                     $actual_image_name = time() . substr(str_replace(" ", "_", $txt), 5) . "." . $ext; // Đổi tên file upload
                     $tmp = $_FILES['upanh']['tmp_name']; // Lấy thư mục lưu tạm upload file
                     if (move_uploaded_file($tmp, $path . $actual_image_name)) { // Di chuyển vào thư mục $path
-                        echo "<img src='uploads/" . $actual_image_name . "'  class='preview'>"; // Nếu di chuyển thành công trả về html img để đẩy vào preview
+                        echo "<img src='model/uploads/" . $actual_image_name . "'  class='preview'>"; // Nếu di chuyển thành công trả về html img để đẩy vào preview
                     } else
                         echo "Lỗi không xác đinh"; // Nếu di chuyển không thành công
                 } else

@@ -1,3 +1,6 @@
+
+/* css cho nhung tab tam an */
+
 /* Man chan */
 .manChanAll{
 	position: fixed;
@@ -200,6 +203,7 @@
 	top: 430px;
 }
 
+/* //// */
 .danganhlen{
 	position: absolute;
 	width: 500px;
@@ -221,7 +225,7 @@
 	width: 965px;
 	height: 590px;
 	border: 1px #00a1f2 solid;
-	background-color: #eeeeee;
+	background-color: #ddd;
 	z-index: 1000;
 	margin: 58px 70px;
 	border-radius: 5px;
@@ -314,6 +318,7 @@
 	border-bottom: thistle 1px solid;
 }
 .chucnangmess{
+	background-color: #eee;
 	width: 100%;
 	height: 40px;
 	color: #00a1f2;

@@ -87,46 +87,46 @@
 					</div>
 
 					<?php
-					$connect=mysqli_connect("localhost","phucvinhvic","2019vanconyeuem");
-					$db=mysqli_select_db($connect,"fikve");
-					if(isset($_POST['sign-submit'])){
-						$useremail=$_POST['sign-email'];
-						$username=$_POST['sign-fullname'];
-						$userpass=$_POST['sign-pass'];
-						$usersex=$_POST['chonsex'];
-						if($usersex="Nam"){
-							$usersex=1;
-						// }else($usersex=="Nữ"){
-						// 	$usersex=2;
-						// }else($usersex=="Khác"){
-						// 	$usersex=3;
-						// }
-						$userpos=$_POST['dia-chi'];
-						if($userpos=="Thanh Xuân"){
-							$userposn=3;
-						// }else($userpos=="Cầu Giấy"){
-						// 	$userposn=4;
-						// }else($userpos=="Ba Đình"){
-						// 	$userposn=5;
-						// }
-						$userage=$_POST['sign-age'];
-						if($useremail==""||$username==""||$userpass==""||$usersex==""||
-						$userpos==""||$userage==""
-						){
-							echo  '<p> Hãy điền đầy đủ thông tin </p>';
-						}else{
-							$sql="INSERT INTO `account`(`name`,`password`,`email`,'idsex','idposition', 'age')
-							VALUES('$username', '$userpass', '$useremail','$usersex','$userposn','$userage')";
-							$query=mysqli_query($connect, $sql);
-							if ($query!=0) {
-								echo '<p>Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập</p>';
-							} else {
-								echo '<p>Bạn đã đăng ký không thành công</p>';
+					// $connect=mysqli_connect("localhost","phucvinhvic","2019vanconyeuem");
+					// $db=mysqli_select_db($connect,"fikve");
+					// if(isset($_POST['sign-submit'])){
+					// 	$useremail=$_POST['sign-email'];
+					// 	$username=$_POST['sign-fullname'];
+					// 	$userpass=$_POST['sign-pass'];
+					// 	$usersex=$_POST['chonsex'];
+					// 	if($usersex="Nam"){
+					// 		$usersex=1;
+					// 	// }else($usersex=="Nữ"){
+					// 	// 	$usersex=2;
+					// 	// }else($usersex=="Khác"){
+					// 	// 	$usersex=3;
+					// 	// }
+					// 	$userpos=$_POST['dia-chi'];
+					// 	if($userpos=="Thanh Xuân"){
+					// 		$userposn=3;
+					// 	// }else($userpos=="Cầu Giấy"){
+					// 	// 	$userposn=4;
+					// 	// }else($userpos=="Ba Đình"){
+					// 	// 	$userposn=5;
+					// 	// }
+					// 	$userage=$_POST['sign-age'];
+					// 	if($useremail==""||$username==""||$userpass==""||$usersex==""||
+					// 	$userpos==""||$userage==""
+					// 	){
+					// 		echo  '<p> Hãy điền đầy đủ thông tin </p>';
+					// 	}else{
+					// 		$sql="INSERT INTO `account`(`name`,`password`,`email`,'idsex','idposition', 'age')
+					// 		VALUES('$username', '$userpass', '$useremail','$usersex','$userposn','$userage')";
+					// 		$query=mysqli_query($connect, $sql);
+					// 		if ($query!=0) {
+					// 			echo '<p>Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập</p>';
+					// 		} else {
+					// 			echo '<p>Bạn đã đăng ký không thành công</p>';
 
-							}
+					// 		}
 							
-						}
-					}
+					// 	}
+					// }
 					?>
 				</form>
 			</div>

@@ -122,7 +122,7 @@
 			</div>
 			<div class="endhs">
 					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+					<button class="fas fa-comment-alt-edit cu-p icsip binhluans" onclick="openAny('commenttus')"></button>
 					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
 					<button class="fad fa-star cu-p icsip quantams"></button>
 
@@ -463,21 +463,64 @@
 		<button class="far fa-times cu-p icsip exit" onclick="closeAny('createtus')"></button>
 	</div>
 	<div class="mytus">
-
+		<div id="mytus"></div>
 	</div>
-		<form id="imageform" method="post" enctype="multipart/form-data" action='model/doajax.php'>
-			<div class="myimage" id="preview"></div>
-			<div class="customupanh">
-				<span class="fakeicon">+</span>
-				<p class="themanh">Thêm ảnh</p>
-				<input type="file" name="upanh" id="upanh" class="upanh">
-			</div>
-		</form>
+	<button class="fas fa-backspace cu-p icsip dele" onclick="clickDele(this)"></button>
+
+
+	<form id="imageform" method="post" enctype="multipart/form-data" action='model/doajax.php'>
+		<div class="myimage" id="preview"></div>
+		<div class="customupanh">
+			<span class="fakeicon">+</span>
+			<p class="themanh">Thêm ảnh</p>
+			<input type="file" name="upanh" id="upanh" class="upanh">
+		</div>
+	</form>
 		
 	<div class="libralytus">
-
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Thiếu một nửa tôi đi tìm một nửa
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Em ngược đường ngược nắng để yêu anh
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">.</br></div>
+		<div class="buttontus" onclick="clickButtontus(this)">,</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Nước mắt đã rơi, trò chơi kết thúc
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Bên em nắng rồi bên anh thì vẫn mưa
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Không nói nhiều tuyển bạn trai
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Các vợ ơi
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Các chồng ơi
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Một là anh đang nói dối
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Hai là anh đang nói dối nhiều lần
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Đã bao lần tự nhủ
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Tình khờ hãy quên đi
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Mà bao kỷ niệm cũ
+		</div>
+		<div class="buttontus" onclick="clickButtontus(this)">
+			Vẫn làm ướt hàng mi
+		</div>
 	</div>
-	<input type="submit" value="Đăng" class="danganhlen">
+	<button class="danganhlen cu-p" onclick="closeAny('createtus')">Đăng</button>
 </div>
 
 
@@ -528,13 +571,41 @@ abcsd
 	<a class="logout " href="../indez.html/first.php"><span>Đăng xuất</span></a>
 	<button class="caidat"><span>Cài Đặt</span></button>
 </div>
+
+
+<!-- Bảng xếp hạng cá nhân -->
+<!-- <div id="bxhcanhan">
+
+</div> -->
 <!-- <script src="../resources/script/hjavascript.js" type="text/javascript"></script> -->
 
 
+<!-- tabs binh luan -->
+<div class="commenttus" id="commenttus">
+	<div class="headhs cmthead">
+		<div class="avt posiavths"></div>
+		<div id="nickname">Phúc Vinh</div>
+		<div id="timeoftus"></div>
+		<div id="khoangcach"></div>
+		<button class="far fa-times cu-p icsip exit" onclick="closeAny('commenttus')"></button>
+	</div>
+	<!-- binh luan cua nguoi khac  -->
+	<div class="blcosan">
 
+	</div>
+	<div class="mycmttus">
+
+	</div>
+	<div class="librarycmt">
+		<div class="buttontus" onclick="clickCmt(this)">
+			Em đẹp quá
+		</div>
+	</div>
+</div>
 
 <script src="vendors/script/jquery.min.js"></script>
 	<script src="vendors/script/jquery.form.js"></script>
+	<script src = "https://code.highcharts.com"></script>
 	<script src="resources/script/javascript.js" type="text/javascript"></script>
 	<script src="resources/script/hjavascript.js" type="text/javascript"></script>
 </body>

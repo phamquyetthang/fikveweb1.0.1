@@ -3,15 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>first</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pattaya&display=swap" rel="stylesheet">
-	
-	<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
-
 <!--	<script src="https://kit.fontawesome.com/aa97e6aad9.js" crossorigin="anonymous"></script>-->
 	<link href="vendors/icon/css/all.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,10 +15,6 @@
 	<script src="resources/script/javascript.js" type="text/javascript"></script>
 
 	<link href="resources/style/first_style.css" type="text/css" rel="stylesheet">
-
-
-
-	
 </head>
 
 <body>

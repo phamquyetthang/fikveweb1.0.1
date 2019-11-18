@@ -23,3 +23,16 @@ function clickDele(del){
     str_mytus = contus;
     mytus.innerHTML = str_mytus;
 }
+
+var mycmt = document.getElementById('mycmt');
+var str_mycmt=" ";
+function clickCmt(obj){
+    var concmt = obj.innerHTML;//lấy nội dung từ các button
+    str_mycmt = str_mycmt + concmt;
+    mycmt.innerHTML = str_mycmt;
+}
+function delecmt(del){
+    var concmt = del.innerHTML;
+    str_mycmt = concmt;
+    mycmt.innerHTML = str_mycmt;
+}

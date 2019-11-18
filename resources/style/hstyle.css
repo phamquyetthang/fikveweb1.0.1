@@ -22,7 +22,7 @@
 	width: 965px;
 	height: 590px;
 	border: 1px #00a1f2 solid;
-	background-color: #eee;
+	background-color: #ddd;
 	z-index: 1000;
 	margin: 58px 70px;
 	border-radius: 8px;
@@ -31,22 +31,76 @@
 .infoleft{
 	position: absolute;
 	height: 100%;
-	width: 400px;
+	width: 399px;
 	top: 0px;
 	left: 0px;
 	/* background-color: #F172A1; */
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
+	border-right: thistle 1px solid;
+}
+.infobottom{
+	position: absolute;
+	width: 400px;
+	height: 250px;
+	background-color: #eee;
+	border-top: #979A9A 1px solid;
+	border-right: #979A9A 1px solid;
+	bottom: 0px;
+	left: 0px;
+	border-bottom-left-radius: 8px;
+	color: #000;
+	
+}
+.infobottom div{
+	color: #000;
+	font-size: 18px;
+	border: thistle 1px solid;
+}
+.infobottom span{
+	color: #000;
+	font-size: 18px;
+}
+.infochild1{
+	width: 190px;
+	height: 30px;
+	margin: 5px;
+	margin-right: 0px;
+	background-color: white;
+	display: inline-block;
+	border-radius: 3px;	
+}
+.infochild2{
+	width: 190px;
+	margin: 5px;
+	margin-right: 0px;
+	background-color: white;
+	display: inline-block;
+	border-radius: 3px;		
+}
+.infochild3{
+	width: 390px;
+	min-height: 50px;
+	margin: 5px;
+	margin-right: 0px;
+	background-color: white;
+	display: block;	
+	overflow: auto;
+	border-radius: 3px;	
+}
+#myslogan{
+	max-height: 60px;
 }
 .hisright{
 	position: absolute;
 	height: 100%;
 	width: 565px;
-	background-color: crimson;
+	background-color: #ddd;
 	right: 0px;
 	top: 0px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
+	overflow: auto;
 }
 .avttop{
 	position: absolute;
@@ -62,28 +116,11 @@
 	background-size: cover;
 }
 
-.infobottom{
-	position: absolute;
-	width: 400px;
-	height: 250px;
-	/* background-color: darkorchid; */
-	border-top: #979A9A 1px solid;
-	border-right: #979A9A 1px solid;
-	bottom: 0px;
-	left: 0px;
-	border-bottom-left-radius: 8px;
-	color: #000;
-}
-.infobottom div{
-	color: #000;
-}
-.infobottom span{
-	color: #000;
-}
+
 .myhis{
-	position: absolute;
-	top: 40px;
-	right: 50px;
+	/* position: absolute; */
+	margin-top: 40px;
+	margin-left: 50px;
 }
 
 .exit{
@@ -308,8 +345,16 @@
 	height: 547px;
 	/* background-color: cornflowerblue; */
 	border-bottom-left-radius: 5px;
+	overflow: auto;
 }
-
+.eachmess{
+	width: 225px;
+	margin: 5px;
+	height: 50px;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+}
 .rightmess{
 	position: absolute;
 	top: 0px;
@@ -349,6 +394,7 @@
 	width: 100%;
 	height: 455px;
 	border-bottom: thistle 1px solid;
+	overflow: auto;
 }
 .chucnangmess{
 	background-color: #eee;
@@ -476,7 +522,7 @@
 	color: black;
 }
 
-
+/* comment  */
 .commenttus{
 	position: fixed;
     top: 0px;
@@ -506,6 +552,14 @@
 	border-bottom: thistle 1px solid;
 	background-color: #dddddd;
 }
+.cmtcosan{
+	width: 490px;
+	margin: 5px;
+	height: 50px;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+}
 .mycmttus{
 	position: absolute;
 	width: 100%;
@@ -513,22 +567,67 @@
 	top: 322px;
 	overflow: auto;
 	border-bottom: thistle 1px solid;
+
+}
+.delecmt{
+	position: absolute;
+	background-color:inherit;
+	color: #E64398;
+	bottom: 205px;
+	right: 20px;
+	padding: 0px;
+	font-size: 24px;
+}
+#mycmt{
+	color: black;
+	margin-right: 20px;
+	font-size: 18px;
 }
 .librarycmt{
 	position: absolute;
 	width: 100%;
-	height: 165px;
-	bottom: 0px;
+	height: 123px;
+	bottom: 42px;
 	overflow: auto;
 	/* border: thistle 1px solid; */
 	background-color: #eee;
 }
 #bxhcanhan{
-	position: relative;
-	min-width: 310px;
-	height: 400px;
-	margin: 0 auto;
-	color: black;
-	background-color: aqua;
+	position: fixed;
+	top: 0px;
+	width: 960px;
+	height: 580px;
+	border: 1px #00a1f2 solid;
+	background-color: #eee;
 	z-index: 1000;
+	margin: 58px 70px;
+	border-radius: 5px;
+	display: none;
+	color: #585858;
+}
+#nguoiquantam{
+	position: fixed;
+	top: 0px;
+	width: 830px;
+	height: 580px;
+	border: 1px #00a1f2 solid;
+	background-color: #eee;
+	z-index: 1000;
+	margin: 58px 170px;
+	border-radius: 5px;
+	display: none;
+	color: #585858;
+	overflow: auto;
+}
+.eachcare{
+	width: 250px;
+	height: 50px;
+	background-color: white;
+	display: inline-block;
+	margin: 0px;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 5px;
+	border: 1px thistle solid;
+
 }

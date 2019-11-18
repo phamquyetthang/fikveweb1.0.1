@@ -60,8 +60,8 @@
 		<button onclick="showMyinfo('myinfomation')" class="fas fa-user-circle icsip cu-p yourinfo" title="Thông tin của bạn"></button>
 		<button class="fas fa-comment-lines icsip cu-p message" onclick="openAny('mymess')" title="Tin nhắn"></button>
 		<!-- <button class="far fa-user-friends icsip cu-p knews"></button> -->
-		<button class="fal fa-chart-line icsip cu-p bxhcn" title="Theo dõi cá nhân"></button>
-		<button class="far fa-star icsip cu-p careful" title="Người bạn quan tâm"></button>
+		<button class="fal fa-chart-line icsip cu-p bxhcn" title="Theo dõi cá nhân" onclick="openAny('bxhcanhan')"></button>
+		<button class="far fa-star icsip cu-p careful" title="Người bạn quan tâm" onclick="openAny('nguoiquantam')"></button>
 		
 		<!-- <label class="switch">
 		<input type="checkbox">
@@ -420,8 +420,8 @@
 				
 			</div>
 			<div class="infobottom">
-				<div id="myNameinfo">
-					<span>Tên</span>
+				<div id="myNameinfo" class="infochild1">
+					<span>Tên:</span>
 					<?php 
 					// include ('C:/xampp/htdocs/fikveweb/fikveweb/controller/selectdata.php');
 
@@ -429,26 +429,30 @@
 						//echo ('helo');
 					?>
 				</div>
-				<div id="nickNameinfo">
-					<span>Nick name</span>
+				<div id="nickNameinfo" class="infochild1">
+					<span>Nick name:</span>
 				</div>
-				<div id="myage">
-					<span>Tuổi</span>
+				<div id="myage" class="infochild2">
+					<span>Tuổi:</span>
 				</div>
-				<div id="mygender">
-					<span>Giới tính</span>
+				<div id="mygender" class="infochild2">
+					<span>Giới tính:</span>
 				</div>
-				<div id="myslogan">
-					<span>Slogan</span>
+				<div id="myslogan" class="infochild3">
+					<span>Slogan:</span>
 				</div>
 
-				<div id="moreinfo">
-					<span>Nói thêm về bạn</span>
+				<div id="moreinfo" class="infochild3">
+					<span>Nói thêm về bạn:</span>
 				</div>
 			</div>
 		</div>
 		<div class="hisright">
 			<div class="far fa-times cu-p icsip exit" onclick="exitButton()"></div>
+			<div class="hop1s myhis"></div>
+			<div class="hop1s myhis"></div>
+			<div class="hop1s myhis"></div>
+			<div class="hop1s myhis"></div>
 			<div class="hop1s myhis"></div>
 		</div>
 	</div>
@@ -532,7 +536,16 @@
 			<button class="kindcon" id="nguoiquen">Người quen</button>
 		</div>
 		<div class="listmess">
-			<div id="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div><div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
+			<div class="eachmess"></div>
 		</div>
 	</div>
 	<div class="rightmess">
@@ -574,11 +587,29 @@ abcsd
 
 
 <!-- Bảng xếp hạng cá nhân -->
-<!-- <div id="bxhcanhan">
+<div id="bxhcanhan">
+	<button class="far fa-times cu-p icsip exit" onclick="closeAny('bxhcanhan')"></button>
+</div>
 
-</div> -->
-<!-- <script src="../resources/script/hjavascript.js" type="text/javascript"></script> -->
 
+<!-- danh sach nguoi quan tam -->
+<div id="nguoiquantam">
+	<button class="far fa-times cu-p icsip exit" onclick="closeAny('nguoiquantam')"></button>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div><div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+	<div class="eachcare"></div>
+</div>
 
 <!-- tabs binh luan -->
 <div class="commenttus" id="commenttus">
@@ -591,18 +622,49 @@ abcsd
 	</div>
 	<!-- binh luan cua nguoi khac  -->
 	<div class="blcosan">
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div><div class="cmtcosan"></div>
 
 	</div>
 	<div class="mycmttus">
-
+		<div id="mycmt"></div>
 	</div>
+	<button class="fas fa-backspace cu-p icsip delecmt" onclick="delecmt(this)"></button>
 	<div class="librarycmt">
 		<div class="buttontus" onclick="clickCmt(this)">
 			Em đẹp quá
 		</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Nhà em ở đâu thế
+		</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Cho anh làm quen với bé ơi
+		</div>
+		<div class="buttontus" onclick="clickCmt(this)">.</br></div>
+		<div class="buttontus" onclick="clickCmt(this)">,</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Người trao có nửa nụ cười
+		</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Mà anh mất cả một đời để quên
+		</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Uống nhầm một ánh mắt
+		</div>
+		<div class="buttontus" onclick="clickCmt(this)">
+			Cơn say theo nửa đời
+		</div>
 	</div>
+	<button class="danganhlen cu-p" onclick="closeAny('commenttus')">Đăng</button>
 </div>
 
+
+<!-- <script src="../resources/script/hjavascript.js" type="text/javascript"></script> -->
 <script src="vendors/script/jquery.min.js"></script>
 	<script src="vendors/script/jquery.form.js"></script>
 	<script src = "https://code.highcharts.com"></script>

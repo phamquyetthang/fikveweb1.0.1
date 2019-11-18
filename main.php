@@ -581,7 +581,7 @@ abcsd
 	<button class="naptien">Nạp vào tài khoản</button>
 </div>
 <div id="otuychon">
-	<a class="logout " href="../indez.html/first.php"><span>Đăng xuất</span></a>
+	<a class="logout " href="index.php"><span>Đăng xuất</span></a>
 	<button class="caidat"><span>Cài Đặt</span></button>
 </div>
 

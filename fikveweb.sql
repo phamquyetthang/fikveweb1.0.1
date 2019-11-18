@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `fikve`
 --
-
+CREATE DATABASE IF NOT EXISTS fikve DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE fikve;
 -- --------------------------------------------------------
 
 --
@@ -46,11 +47,22 @@ CREATE TABLE `account` (
 -- Đang đổ dữ liệu cho bảng `account`
 --
 
-INSERT INTO `account` (`idacc`, `email`, `name`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`) VALUES
-(1, 'quyet@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 0),
-(2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 0),
-(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'fcgvhbn', 2, 4, 'cfghgbn', 'dfghhjj', 0);
-
+INSERT INTO `account` (`idacc`, `email`, `name`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`, `tuongtac`, `money`) VALUES
+(1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 18, 1000, 100),
+(2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 20, 980, 100),
+(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'fcgvhbn', 2, 4, 'cfghgbn', 'dfghhjj', 18, 600, 100),
+(7, 'phuc@gmail.com', 'Phúc', '345678', 'Không Phải Phúc', NULL, 1, 6, NULL, NULL, 18, 880, 100),
+(8, 'son@gmail.com', 'Đặng Anh Sơn', '543212', 'Sơn Thần', NULL, 1, 12, NULL, NULL, 17, 600, 100),
+(9, 'thuong@gmail.com', 'Tạ Quang Thưởng', '987654', 'Kỳ Quan Thiên Nhiên', NULL, 3, 18, NULL, NULL, 19, 780, 100),
+(10, 'thai@gmail.com', 'Nguyễn Minh Thái', '345678', 'Siêu', NULL, 1, 18, 'Nothing is impossible', NULL, 19, 920, 100),
+(11, 'troang@gmail.com', 'Kiều Trang', '3245646', 'Trang Lang Thang', NULL, 2, 8, NULL, NULL, 20, 888, 100),
+(12, 'thanh@gmail.com', 'Ngô Thị Thanh', '234567', 'Nguyễn Thị Tý', NULL, 2, 6, NULL, NULL, 20, 222, 100),
+(13, 'huong@gmail.com', 'Nguyễn Lan Hương', '123764', 'Không mùi', NULL, 2, 23, NULL, NULL, 20, 460, 100),
+(14, 'may@gmail.com', 'Vũ Thị Mây', '2423465', 'Để Gió Cuốn Đi', NULL, 2, 25, NULL, NULL, 20, 890, 100),
+(15, 'nghiep@gmail.com', 'Phạm Nghiệp', '76543', 'Not Quật', NULL, 3, 2, NULL, NULL, 24, 111, 100),
+(16, 'viet@gmail.com', 'Văn Việt', '987653', 'Dân Tộc Kinh', NULL, 3, 17, NULL, NULL, 20, 456, 100),
+(17, 'truong@gmail.com', 'Nguyễn Trường', '543234', 'Không Phải Trường', NULL, 3, 11, NULL, NULL, 20, 125, 100),
+(18, 'long@gmail.com', 'Văn Long', '4566787', 'Ranh Con', NULL, 3, 14, NULL, NULL, 18, 695, 100);
 -- --------------------------------------------------------
 
 --
@@ -91,12 +103,36 @@ CREATE TABLE `positionuser` (
 -- Đang đổ dữ liệu cho bảng `positionuser`
 --
 
-INSERT INTO `positionuser` (`idpos`, `posi`) VALUES
-(1, 'nam dinh'),
-(2, 'thanh hoa'),
-(3, 'Thanh Xuân'),
-(4, 'Cầu Giấy'),
-(5, 'Ba Đình');
+INSERT INTO `positionuser` (`idpos`, `posi`, `valuekm`) VALUES
+(1, 'Ba Đình', 8),
+(2, 'Hoàn Kiếm', 14),
+(3, 'Hai Bà Trưng', 12),
+(4, 'Đống Đa', 5),
+(5, 'Tây Hồ', 8),
+(6, 'Cầu Giấy', 0),
+(7, 'Thanh Xuân', 12),
+(8, 'Hoàng Mai', 20),
+(9, 'Long Biên', 21),
+(10, 'Từ Liêm', 3),
+(11, 'Thanh Trì', 15),
+(12, 'Gia Lâm', 10),
+(13, 'Đông Anh', 20),
+(14, 'Sóc Sơn', 23),
+(15, 'Hà Đông', 16),
+(16, 'Sơn Tây', 32),
+(17, 'Ba Vì', 35),
+(18, 'Phúc Thọ', 40),
+(19, 'Thạch Thất', 38),
+(20, 'Quốc Oai', 28),
+(21, 'Chương Mỹ', 33),
+(22, 'Đan Phượng', 31),
+(23, 'Hoài Đức', 20),
+(24, 'Thanh Oai', 33),
+(25, 'Mỹ Đức', 40),
+(26, 'Ứng Hòa', 41),
+(27, 'Thường Tín', 42),
+(28, 'Phú Xuyên', 45),
+(29, 'Mê Linh', 24);
 
 -- --------------------------------------------------------
 

@@ -230,17 +230,17 @@ body{
 	z-index: 1;
 	top: 50px;
 	left: 70px;
-	max-width: 945px;
-	height: auto;
+	max-width: 955px;
+	height: 800px;
 	min-height: 600px;
 	padding-top: 5px;
-	padding-left: 10px;
+	padding-left: 8px;
 	padding-bottom: 100px;
 	background-color: #eee;
 	border: 1px solid thistle;
 	border-radius: 5px;
 	box-shadow: thistle 2px 2px 5px;
-
+	overflow: auto;
 }
 /* đăng status */
 .mycreats{
@@ -324,7 +324,7 @@ body{
 	border:thistle 1px solid;
 	border-radius: 10px;
 	/* box-shadow: gray 1px 1px 2px; */
-	margin-right: 3px;
+	margin-right: 0px;
 	color: black;
 	margin-bottom: 20px;
 }

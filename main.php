@@ -45,6 +45,7 @@
 		<div>
 		<button onclick="openLit('omoney','sukienhai')" class="fas fa-heart-circle icsip cu-p moneys" title="heart coin">
 		</button>
+		<!-- <span>100</span> -->
 		</div>
 		
 		<div>

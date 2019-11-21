@@ -18,18 +18,20 @@ body{
 /*header*/
 .header{
 	color: white;
-	border: 1px gray solid thin;
-	border-radius: 3px;
-	margin-left: 2px;
-	margin-right: 2px;
+	border: 1px gray solid;
+	border-radius: 5px;
+	left: 9px;
+	right: 5px;
 	position: fixed;
-	width: 100%;
 	background-attachment: fixed;
 	height: 50px;
 	top: 0;
-	background-color: #00a1f2;
-	box-shadow: 1px 1px 2px gray;
+	background-color: #f0f0f0;
+	border: thistle 1px solid;
 	z-index: 2;
+}
+header button{
+	color: #00a1f2;
 }
 .icsip{
 	font-size: 32px;
@@ -96,7 +98,7 @@ body{
 .options{ 
 	position: fixed;
 	right: 50px;
-	background-color:#00a1f2;	
+	/* background-color:#00a1f2;	 */
 	border: hidden;
 	width: 30px;
 	height: 50px;
@@ -115,10 +117,12 @@ body{
 	border-radius: 5px;
 	/* padding-left: 10px; */
 	padding-top: 20px;
-	background-color:#00a1f2;
-	color: white;
+	background-color:#ddd;
+	color: #00a1f2;
 }
-
+.letrai button{
+	color: #00a1f2;
+}
 .yourinfo{ 
 	width: 60px;
 	height: 60px;
@@ -236,7 +240,7 @@ body{
 	padding-top: 5px;
 	padding-left: 8px;
 	padding-bottom: 100px;
-	background-color: #eee;
+	background-color: #ddd;
 	border: 1px solid thistle;
 	border-radius: 5px;
 	box-shadow: thistle 2px 2px 5px;
@@ -251,7 +255,7 @@ body{
 	width: 250px;
 	border:thistle 1px solid;
 	border-radius: 10px;
-	background-color: violet;
+	background-color: #eee;
 }
 /* tùy chọn hiển thị */
 .tabmenu1{
@@ -264,18 +268,18 @@ body{
 	text-align: center;
 	padding: 0px;
 	list-style: none;
-	font-family: 'Baloo Bhai', cursive;
+	font-family: 'Calistoga', cursive;
 }
 .tabmenu1 li{
 	display: inline-block;
 	
 }
 .tabmenu1 li a{
-	background-color: violet;
+	background-color: #eee;
 	transition: 1s;
 }
 .tabmenu1 li a:hover{
-	background-color:#D33AD3;
+	background-color: white;
 }
 .setcons{
 	/* position: absolute; */
@@ -480,7 +484,7 @@ body{
 	right: 2px;
 	border-radius: 5px;
 	padding-top: 1px;
-	background-color:#00a1f2;
+	background-color:#ddd;
 	color: white;
 }
 
@@ -523,18 +527,20 @@ body{
 .ranks{
 	width: 280px;
 	height: 56px;
-	left: 2px;
-	margin-top: 1px;
+	left: 6px;
+	margin-top: 4px;
 	display: block;
 	padding: 0px;
 	position: relative;
 	border-radius: 8px;
 	z-index: 1;
+	background-color: white;
+	border: thistle 1px solid;
 }
 .ranks:hover{
 	background-color: #504768;
-	width: 285px;
-	height: 60px;
+	/* width: 285px;
+	height: 60px; */
 }
 
 
@@ -580,7 +586,7 @@ body{
 	max-width: 170px;
 	font-style: normal;
 	font-family: Arial;
-	color: #F172A1;
+	color: black;
 	display: inline-block;
 	font-weight: 700;
 	outline: none;
@@ -601,11 +607,11 @@ body{
 	position: absolute;
 	top: 23px;
 	left: 78px;
-	font-family: 'EB Garamond', serif;
-	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
 	height: 34px;
 	max-width: 200px;
-	color: gainsboro;
+	color: black;
 	/* border: #00a1f2 1px solid; */
 	outline: none;
 	text-align: left;

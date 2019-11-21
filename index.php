@@ -41,13 +41,6 @@
 		</div>
 		
 	</div>
-	
-	<div id="formdangky" class="dangky">
-		<div >
-
-		</div>
-	</div>
-
 
 	</div>
 </body>

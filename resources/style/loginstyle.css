@@ -588,10 +588,9 @@
   }
   
   .eback{
-    position: absolute;
-    top: 25px;
-    right: 460px;
+    position: sticky;
+    top: 0px;
+    right: 0px;
     font-size: 20px;
     color: #333333;
-  
   }

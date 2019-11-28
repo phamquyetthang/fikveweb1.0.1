@@ -42,14 +42,14 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="sign-email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
 						</span>
 					</div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" name="sign-fullname" placeholder="Họ và Tên">
+                        <input class="input100" type="text" name="fullname" placeholder="Họ và Tên">
                     
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -57,7 +57,7 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="sign-pass" placeholder="Password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -66,67 +66,103 @@
 					<div>
 						<input class="input101 m-b-16" list="gioitinh" name="chonsex" placeholder="Nam/Nữ/Khác"/>
 							<datalist id="gioitinh">
-							<option value="Nam"></option>
-							<option value="Nữ"></option>
-							<option value="Khác"></option>
+							<option value="1">Nam</option>
+							<option value="2">Nữ</option>
+							<option value="3">Khác</option>
 							</datalist>
 					</div>	
 					<div>
-						<input class="input102" type="number" name="sign-age" min="14" placeholder="Tuổi"/>
+						<input class="input102" type="number" name="age" min="14" placeholder="Tuổi"/>
 					</div>
 					<div>
 						<input class="input103" list="diachi" name="dia-chi" placeholder="Địa chỉ"/>
 							<datalist id="diachi">
-							<option value="Thanh Xuân"></option>
-							<option value="Cầu Giấy"></option>
-							<option value="Ba Đình"></option>
+								<option value="1">Ba Đình</option>
+								<option value="2">Hoàn Kiếm</option>
+								<option value="3">Hai Bà Trưng</option>
+								<option value="4">Đống Đa</option>
+								<option value="5">Tây Hồ</option>
+								<option value="6">Cầu Giấy</option>
+								<option value="7">Thanh Xuân</option>
+								<option value="8">Hoàng Mai</option>
+								<option value="9">Long Biên</option>
+								<option value="10">Từ Liêm</option>
+								<option value="11">Thanh Trì</option>
+								<option value="12">Gia Lâm</option>
+								<option value="13">Đông Anh</option>
+								<option value="14">Sóc Sơn</option>
+								<option value="15">Hà Đông</option>
+								<option value="16">Sơn Tây</option>
+								<option value="17">Ba Vì</option>
+								<option value="18">Phúc Thọ</option>
+								<option value="19">Thạch Thất</option>
+								<option value="20">Quốc Oai</option>
+								<option value="21">Chương Mỹ</option>
+								<option value="22">Đan Phượng</option>
+								<option value="23">Hoài Đức</option>
+								<option value="24">Thanh Oai</option>
+								<option value="25">Mỹ Đức</option>
+								<option value="26">Ứng Hòa</option>
+								<option value="27">Thường Tín</option>
+								<option value="28">Phú Xuyên</option>
+								<option value="29">Mê Linh</option>
 							</datalist>
 					</div>
 					<div class="container-login100-form-btn p-t-25">
-						<input type="submit" name="sign-submit" value="Đăng ký" class="login100-form-btn">
+						<input type="submit" name="submit" value="Đăng ký" class="login100-form-btn">
 					</div>
-
 					<?php
-					// $connect=mysqli_connect("localhost","phucvinhvic","2019vanconyeuem");
-					// $db=mysqli_select_db($connect,"fikve");
-					// if(isset($_POST['sign-submit'])){
-					// 	$useremail=$_POST['sign-email'];
-					// 	$username=$_POST['sign-fullname'];
-					// 	$userpass=$_POST['sign-pass'];
-					// 	$usersex=$_POST['chonsex'];
-					// 	if($usersex="Nam"){
-					// 		$usersex=1;
-					// 	// }else($usersex=="Nữ"){
-					// 	// 	$usersex=2;
-					// 	// }else($usersex=="Khác"){
-					// 	// 	$usersex=3;
-					// 	// }
-					// 	$userpos=$_POST['dia-chi'];
-					// 	if($userpos=="Thanh Xuân"){
-					// 		$userposn=3;
-					// 	// }else($userpos=="Cầu Giấy"){
-					// 	// 	$userposn=4;
-					// 	// }else($userpos=="Ba Đình"){
-					// 	// 	$userposn=5;
-					// 	// }
-					// 	$userage=$_POST['sign-age'];
-					// 	if($useremail==""||$username==""||$userpass==""||$usersex==""||
-					// 	$userpos==""||$userage==""
-					// 	){
-					// 		echo  '<p> Hãy điền đầy đủ thông tin </p>';
-					// 	}else{
-					// 		$sql="INSERT INTO `account`(`name`,`password`,`email`,'idsex','idposition', 'age')
-					// 		VALUES('$username', '$userpass', '$useremail','$usersex','$userposn','$userage')";
-					// 		$query=mysqli_query($connect, $sql);
-					// 		if ($query!=0) {
-					// 			echo '<p>Bạn đã đăng ký thành công. Hãy quay lại để đăng nhập</p>';
-					// 		} else {
-					// 			echo '<p>Bạn đã đăng ký không thành công</p>';
+					$server = "localhost";
+					$username = "phucvinhvic"; // Khai báo username
+					$password = "2019vanconyeuem";      // Khai báo password
+					$port="3306";
+					$dbname   = "fikve";      // Khai báo database
 
-					// 		}
-							
-					// 	}
-					// }
+					// Kết nối database tintuc
+					$connect = new mysqli($server, $username, $password, $dbname, $port);
+
+					//Nếu kết nối bị lỗi thì xuất báo lỗi và thoát.
+					if ($connect->connect_error) {
+						die("Không kết nối :" . $conn->connect_error);
+						exit();
+					}
+
+					//Khai báo giá trị ban đầu, nếu không có thì khi chưa submit câu lệnh insert sẽ báo lỗi
+					$title = "";
+					$date = "";
+					$description = "";
+					$content = "";
+
+					//Lấy giá trị POST từ form vừa submit
+					if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						if(isset($_POST["email"])) { $signemail = $_POST['email']; }
+						if(isset($_POST["fullname"])) { $signfullname = $_POST['fullname']; }
+						if(isset($_POST["pass"])) { $signpass = $_POST['pass']; }
+						if(isset($_POST["chonsex"])) { $chonsex = $_POST['chonsex']; }
+						if(isset($_POST["dia-chi"])) { $diachi = $_POST['dia-chi']; }
+						if(isset($_POST["age"])) { $signage = $_POST['age']; }
+						$sexinput;
+						if($chonsex=="Nữ"){
+							$sexinput=1;
+						}
+						else if($chonsex =="Nam"){
+							$sexinput = 2;
+						}
+						else if($chonsex=="Khác"){
+							$sexinput=3;
+						}
+						//Code xử lý, insert dữ liệu vào table
+						//$sql = "INSERT INTO tin_xahoi (title, date, description, content)
+						//VALUES ('$title', '$date', '$description', '$content')";
+						$sql = "INSERT INTO account (email, accname, password, idsex, idposition, age) VALUES ('$signemail', '$signfullname', '$signpass', '$chonsex', '$diachi', '$signage' )";
+						if ($connect->query($sql) === TRUE) {
+							echo "Thêm dữ liệu thành công";
+						} else {
+							echo "Error: " . $sql . "<br>" . $connect->error;
+						}
+					}
+					//Đóng database
+					$connect->close();
 					?>
 				</form>
 			</div>

@@ -34,7 +34,7 @@
 <!--header-->
 	<header class="header">
 		<div>
-			<a href="#"><img class="logo" src="resources/img/logo12.png" alt="logo"></a> 
+			<a href="main.php"><img class="logo" src="resources/img/logo12.png" alt="logo"></a> 
 		</div>
 		<div id="title">Fikve</div>
 		
@@ -151,7 +151,7 @@
 			</div>
 		</div>
 		<?php
-			for ($i = 0; $i < 20; $i++){
+			for ($i = 0; $i < 200; $i++){
 				echo '<div class="hop1s">
 				<div class="headhs">
 					<div class="avt posiavths"></div>

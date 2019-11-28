@@ -150,154 +150,86 @@
 	
 			</div>
 		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths  ">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-	
-			</div>
-		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths  ">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-	
-			</div>
-		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths  ">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-	
-			</div>
-		</div>
+		<?php
+			for ($i = 0; $i < 20; $i++){
+				echo '<div class="hop1s">
+				<div class="headhs">
+					<div class="avt posiavths"></div>
+					<div id="nickname"></div>
+					<div id="timeoftus"></div>
+					<div id="khoangcach"></div>
+					<button class="far fa-times cu-p icsip banthems"></button>
+				</div>
+				<div class="statushs"></div>
+				<div class="contenths  ">
+					<button class="fal fa-info-circle cu-p report"></button>
+				</div>
+				<div class="endhs">
+						<button class="fad fa-heart cu-p icsip thatims"></button>
+						<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+						<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
+						<button class="fad fa-star cu-p icsip quantams"></button>
+		
+				</div>
+			</div>';
+			}
+		?>
 	</div>
 		
 
 	<div id="tab2" class="tabcontents" style="display: none;">
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times-circle cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-
-			</div>
-		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times-circle cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-
-			</div>
-		</div>
+		<?php
+			for ($i = 0; $i < 20; $i++){
+				echo '<div class="hop1s">
+				<div class="headhs">
+					<div class="avt posiavths"></div>
+					<div id="nickname"></div>
+					<div id="timeoftus"></div>
+					<div id="khoangcach"></div>
+					<button class="far fa-times cu-p icsip banthems"></button>
+				</div>
+				<div class="statushs"></div>
+				<div class="contenths  ">
+					<button class="fal fa-info-circle cu-p report"></button>
+				</div>
+				<div class="endhs">
+						<button class="fad fa-heart cu-p icsip thatims"></button>
+						<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+						<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
+						<button class="fad fa-star cu-p icsip quantams"></button>
+		
+				</div>
+			</div>';
+			}
+		?>
 	</div>
 
 
 	<div id="tab3" class="tabcontents" style="display: none;">
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times-circle cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-
-			</div>
-		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
-				<div id="nickname"></div>
-				<div id="timeoftus"></div>
-				<div id="khoangcach"></div>
-				<button class="far fa-times-circle cu-p icsip banthems"></button>
-			</div>
-			<div class="statushs"></div>
-			<div class="contenths">
-				<button class="fal fa-info-circle cu-p report"></button>
-			</div>
-			<div class="endhs">
-					<button class="fad fa-heart cu-p icsip thatims"></button>
-					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-					<button class="fad fa-star cu-p icsip quantams"></button>
-
-			</div>
-		</div>
+	<?php
+			for ($i = 0; $i < 20; $i++){
+				echo '<div class="hop1s">
+				<div class="headhs">
+					<div class="avt posiavths"></div>
+					<div id="nickname"></div>
+					<div id="timeoftus"></div>
+					<div id="khoangcach"></div>
+					<button class="far fa-times cu-p icsip banthems"></button>
+				</div>
+				<div class="statushs"></div>
+				<div class="contenths  ">
+					<button class="fal fa-info-circle cu-p report"></button>
+				</div>
+				<div class="endhs">
+						<button class="fad fa-heart cu-p icsip thatims"></button>
+						<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+						<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
+						<button class="fad fa-star cu-p icsip quantams"></button>
+		
+				</div>
+			</div>';
+			}
+		?>
 	</div>
 
 
@@ -349,37 +281,48 @@
 				<div id="scoretrender">762</div>
 				<div id="slogantrender">Chiều bỡ ngỡ bơ vơ</div>
 			</div>
+			<?php
+			 for($i = 5; $i < 11; $i++){
+				 if($i<=9){
+					echo '<div class="ranks cu-p">
+					<div id="stts">0'.$i.'</div>
+					<div id="avttrender" class="img7"></div>
+					<div id="nametrender">Nickname</div>
+					<div id="scoretrender">Points</div>
+					<div id="slogantrender">slogan</div>
+					</div>';
+				 }else {echo '<div class="ranks cu-p">
+				 <div id="stts">'.$i.'</div>
+				 <div id="avttrender" class="img7"></div>
+				 <div id="nametrender">Nickname</div>
+				 <div id="scoretrender">Points</div>
+				 <div id="slogantrender">slogan</div>
+			 	</div>';}
+				 
+			 }
+			?>
 		</div>
 
 		<div id="tabrankgirl" class="rankdisplay" style="display: none;">
-				<div class="ranks cu-p">
-						<div id="stts">01</div>
-						<div id="avttrender" class="img3"></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<div class="ranks cu-p">
-						<div id="stts">02</div>
-						<div id="avttrender" class="img4"></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<div class="ranks cu-p">
-						<div id="stts">03</div>
-						<div id="avttrender"></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<div class="ranks cu-p">
-						<div id="stts">04</div>
-						<div id="avttrender" ></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
+		<?php
+			 for($i = 1; $i < 11; $i++){
+				if($i<=9){
+					echo '<div class="ranks cu-p">
+					<div id="stts">0'.$i.'</div>
+					<div id="avttrender" class="img7"></div>
+					<div id="nametrender">Nickname</div>
+					<div id="scoretrender">Points</div>
+					<div id="slogantrender">slogan</div>
+					</div>';
+				 }else {echo '<div class="ranks cu-p">
+				 <div id="stts">'.$i.'</div>
+				 <div id="avttrender" class="img7"></div>
+				 <div id="nametrender">Nickname</div>
+				 <div id="scoretrender">Points</div>
+				 <div id="slogantrender">slogan</div>
+			 	</div>';}
+			 }
+			?>
 		</div>
 		<div id="tabranklgbt" class="rankdisplay"  style="display: none;">
 				<div class="ranks cu-p">
@@ -389,27 +332,25 @@
 						<div id="scoretrender">1000</div>
 						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
 					</div>
-					<div class="ranks cu-p">
-						<div id="stts">02</div>
-						<div id="avttrender" class="img4"></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<div class="ranks cu-p">
-						<div id="stts">03</div>
-						<div id="avttrender"></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<div class="ranks cu-p">
-						<div id="stts">04</div>
-						<div id="avttrender" ></div>
-						<div id="nametrender">Chí Công Tử</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
+					<?php
+			 for($i = 2; $i < 11; $i++){
+				if($i<=9){
+					echo '<div class="ranks cu-p">
+					<div id="stts">0'.$i.'</div>
+					<div id="avttrender" class="img7"></div>
+					<div id="nametrender">Nickname</div>
+					<div id="scoretrender">Points</div>
+					<div id="slogantrender">slogan</div>
+					</div>';
+				 }else {echo '<div class="ranks cu-p">
+				 <div id="stts">'.$i.'</div>
+				 <div id="avttrender" class="img7"></div>
+				 <div id="nametrender">Nickname</div>
+				 <div id="scoretrender">Points</div>
+				 <div id="slogantrender">slogan</div>
+			 	</div>';}
+			 }
+			?>
 
 		</div>
 	</div>
@@ -450,7 +391,12 @@
 			</div>
 		</div>
 		<div class="hisright">
-			<div class="far fa-times cu-p icsip exit" onclick="exitButton()"></div>
+			<div class="far fa-times cu-p icsip exit e1" onclick="exitButton()"></div>
+			<?php
+				for($i = 0; $i< 10; $i++){
+					echo '<div class="hop1s myhis"></div>';
+				}
+			?>
 			<div class="hop1s myhis"></div>
 			<div class="hop1s myhis"></div>
 			<div class="hop1s myhis"></div>
@@ -630,7 +576,8 @@ abcsd
 		<div class="cmtcosan"></div>
 		<div class="cmtcosan"></div>
 		<div class="cmtcosan"></div>
-		<div class="cmtcosan"></div><div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
+		<div class="cmtcosan"></div>
 
 	</div>
 	<div class="mycmttus">

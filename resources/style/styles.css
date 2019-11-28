@@ -486,6 +486,7 @@ header button{
 	padding-top: 1px;
 	background-color:#ddd;
 	color: white;
+	overflow: auto;
 }
 
 .tabmenu2{
@@ -506,6 +507,9 @@ header button{
 	background-color: #eeeeee;
 	right: -50px;
 
+}
+.rankdisplay{
+	overflow: auto;
 }
 .tabmenu2:hover{
 	right: 0px;

@@ -543,20 +543,11 @@ abcsd
 <!-- danh sach nguoi quan tam -->
 <div id="nguoiquantam">
 	<button class="far fa-times cu-p icsip exit" onclick="closeAny('nguoiquantam')"></button>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div><div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
-	<div class="eachcare"></div>
+	<?php
+		for($i = 0; $i< 200; $i++){
+			echo '<div class="eachcare"></div>';
+		}
+	?>
 </div>
 
 <!-- tabs binh luan -->

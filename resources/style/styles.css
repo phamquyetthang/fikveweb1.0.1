@@ -34,7 +34,7 @@ header button{
 	color: #00a1f2;
 }
 .icsip{
-	font-size: 32px;
+	font-size: 30px;
 	background-color:inherit;
 	border: hidden;
 }
@@ -427,6 +427,7 @@ header button{
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-image: url(../img/dbbg.jpg);
 }
 .img1{
 	background-image: url(../img/thuy1.jpg);

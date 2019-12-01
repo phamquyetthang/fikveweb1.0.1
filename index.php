@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>first</title>
+	<meta charset="utf-8">
+	<title>first</title>
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pattaya&display=swap" rel="stylesheet">
 <!--	<script src="https://kit.fontawesome.com/aa97e6aad9.js" crossorigin="anonymous"></script>-->

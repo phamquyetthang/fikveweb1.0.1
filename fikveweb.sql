@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2019 lúc 08:12 AM
+-- Thời gian đã tạo: Th12 01, 2019 lúc 10:17 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -21,8 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `fikve`
 --
-CREATE DATABASE IF NOT EXISTS fikve DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE fikve;
+
 -- --------------------------------------------------------
 
 --
@@ -32,7 +31,7 @@ USE fikve;
 CREATE TABLE `account` (
   `idacc` int(8) NOT NULL,
   `email` varchar(225) NOT NULL,
-  `name` varchar(225) NOT NULL,
+  `accname` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
   `nicknam` varchar(225) DEFAULT NULL,
   `avt` text DEFAULT NULL,
@@ -40,14 +39,16 @@ CREATE TABLE `account` (
   `idposition` int(11) NOT NULL,
   `slogan` text DEFAULT NULL,
   `moreinfo` text DEFAULT NULL,
-  `age` int(11) NOT NULL
+  `age` int(11) NOT NULL,
+  `tuongtac` int(11) DEFAULT NULL,
+  `money` int(11) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `account`
 --
 
-INSERT INTO `account` (`idacc`, `email`, `name`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`, `tuongtac`, `money`) VALUES
+INSERT INTO `account` (`idacc`, `email`, `accname`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`, `tuongtac`, `money`) VALUES
 (1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 18, 1000, 100),
 (2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 20, 980, 100),
 (3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'fcgvhbn', 2, 4, 'cfghgbn', 'dfghhjj', 18, 600, 100),
@@ -62,7 +63,17 @@ INSERT INTO `account` (`idacc`, `email`, `name`, `password`, `nicknam`, `avt`, `
 (15, 'nghiep@gmail.com', 'Phạm Nghiệp', '76543', 'Not Quật', NULL, 3, 2, NULL, NULL, 24, 111, 100),
 (16, 'viet@gmail.com', 'Văn Việt', '987653', 'Dân Tộc Kinh', NULL, 3, 17, NULL, NULL, 20, 456, 100),
 (17, 'truong@gmail.com', 'Nguyễn Trường', '543234', 'Không Phải Trường', NULL, 3, 11, NULL, NULL, 20, 125, 100),
-(18, 'long@gmail.com', 'Văn Long', '4566787', 'Ranh Con', NULL, 3, 14, NULL, NULL, 18, 695, 100);
+(18, 'long@gmail.com', 'Văn Long', '4566787', 'Ranh Con', NULL, 3, 14, NULL, NULL, 18, 695, 100),
+(19, 'phuclong@gmail.com', 'Phúc Long', '23456544', NULL, NULL, 1, 7, NULL, NULL, 20, NULL, 100),
+(20, 'phucthanh@gmail.com', 'Phúc Thành', '23456544', NULL, NULL, 1, 7, NULL, NULL, 20, NULL, 100),
+(12234, 'thangcho@ancut.com', 'thắng ăn cứt', '12234bafdf', 'gdf', '342', 1, 1, 'dsfd', 'sdfsdf', 56, 1000, 100),
+(12235, 'abc@gmail.com', 'fdshfgkjdsf', 'adf3q2rsdf', 'gdf', '342', 1, 1, 'dsfd', NULL, 45, 1000, 100),
+(12236, 'aghfjkadgdf', 'sdafasd', 'ádfsdafwe', NULL, NULL, 3, 7, NULL, NULL, 45, NULL, 100),
+(12237, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
+(12238, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
+(12239, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
+(12240, 'hongngoc@gmail.com', 'Hồng Ngọc', '345623', NULL, NULL, 2, 5, NULL, NULL, 24, NULL, 100);
+
 -- --------------------------------------------------------
 
 --
@@ -96,7 +107,8 @@ CREATE TABLE `comment` (
 
 CREATE TABLE `positionuser` (
   `idpos` int(11) NOT NULL,
-  `posi` text NOT NULL
+  `posi` text NOT NULL,
+  `valuekm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -262,7 +274,7 @@ ALTER TABLE `tuscontent`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12241;
 
 --
 -- AUTO_INCREMENT cho bảng `activeone`
@@ -280,7 +292,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT cho bảng `positionuser`
 --
 ALTER TABLE `positionuser`
-  MODIFY `idpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `status`

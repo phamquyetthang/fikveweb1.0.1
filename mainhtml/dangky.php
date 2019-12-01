@@ -111,7 +111,9 @@
 					<div class="container-login100-form-btn p-t-25">
 						<input type="submit" name="submit" value="Đăng ký" class="login100-form-btn">
 					</div>
-					<?php
+	
+				</form>
+				<?php
 					$server = "localhost";
 					$username = "phucvinhvic"; // Khai báo username
 					$password = "2019vanconyeuem";      // Khai báo password
@@ -156,7 +158,7 @@
 						//VALUES ('$title', '$date', '$description', '$content')";
 						$sql = "INSERT INTO account (email, accname, password, idsex, idposition, age) VALUES ('$signemail', '$signfullname', '$signpass', '$chonsex', '$diachi', '$signage' )";
 						if ($connect->query($sql) === TRUE) {
-							echo "Thêm dữ liệu thành công";
+							echo "Đăng ký thành công";
 						} else {
 							echo "Error: " . $sql . "<br>" . $connect->error;
 						}
@@ -164,7 +166,6 @@
 					//Đóng database
 					$connect->close();
 					?>
-				</form>
 			</div>
 		</div>
 	</div>

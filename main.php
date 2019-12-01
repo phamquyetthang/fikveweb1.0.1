@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>FiKVe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>FiKVe</title>
 
 	<link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
@@ -83,16 +84,19 @@
 
 	<div id="menuno1" >
 		<ul class="tabmenu1">
-			<li><a onclick="openTabs('tab1')" class="fas fa-street-view cu-p icsip setcons">
-					<span class="textinli1" title="Tìm kiếm theo khu vực">Xung quanh</span>
-				</a
-			></li>
-			<li><a onclick="openTabs('tab2')" class="fas fa-book-heart cu-p icsip setcons">
-					<span class="textinli1" title="Những người bạn đã biết">Đã biết</span>
+			<li><a onclick="openTabs('tab1')" class=" cu-p icsip setcons">
+			<!-- fas fa-street-view -->
+					<div title="Tìm kiếm theo khu vực">Xung quanh</div>
 				</a>
 			</li>
-			<li><a onclick="openTabs('tab3')" class="fas fa-analytics cu-p icsip setcons">
-					<span class="textinli1" title="Những bài viết xu hướng">Trend</span>
+			<li><a onclick="openTabs('tab2')" class="cu-p icsip setcons">
+			<!-- fas fa-book-heart -->
+					<div title="Những người bạn đã biết">Đã biết</div>
+				</a>
+			</li>
+			<li><a onclick="openTabs('tab3')" class="cu-p icsip setcons">
+			<!-- fas fa-analytics  -->
+					<div title="Những bài viết xu hướng">Trend</div>
 				</a>
 			</li>
 			
@@ -211,7 +215,7 @@
 				echo '<div class="hop1s">
 				<div class="headhs">
 					<div class="avt posiavths"></div>
-					<div id="nickname"></div>
+					<div id="nickname">kakashi</div>
 					<div id="timeoftus"></div>
 					<div id="khoangcach"></div>
 					<button class="far fa-times cu-p icsip banthems"></button>

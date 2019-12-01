@@ -35,7 +35,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 			<a id="back" class="far fa-times eback" href="../index.php"></a>
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" action="../main.php">
 					<span class="login100-form-title p-b-55">
 						Fikve
 					</span>
@@ -64,11 +64,8 @@
 					</div>
 					
 					<div class="container-login100-form-btn p-t-25">
-						<a class="login100-form-btn" href="../main.php">
-							Đăng nhập
-						</a>
+						<input type="submit" name="submit" value="Đăng nhập" class="login100-form-btn">
 					</div>
-
 					<!-- <div class="text-center w-full p-t-42 p-b-22">
 						<span class="txt1">
 							Hoặc đăng nhập bằng
@@ -97,6 +94,50 @@
 					</div>
 -->
 				</form>
+
+				<?php
+					$server = "localhost";
+					$username = "phucvinhvic"; // Khai báo username
+					$password = "2019vanconyeuem";      // Khai báo password
+					$port="3306";
+					$dbname   = "fikve";      // Khai báo database
+
+					// Kết nối database tintuc
+					$connect = new mysqli($server, $username, $password, $dbname, $port);
+
+					//Nếu kết nối bị lỗi thì xuất báo lỗi và thoát.
+					if ($connect->connect_error) {
+						die("Không kết nối :" . $conn->connect_error);
+						exit();
+					}
+
+					//Khai báo giá trị ban đầu, nếu không có thì khi chưa submit câu lệnh insert sẽ báo lỗi
+					$title = "";
+					$date = "";
+					$description = "";
+					$content = "";
+
+					//Lấy giá trị POST từ form vừa submit
+					if(isset($_POST['submit'])){
+						$logmail = $_POST['email'];
+						$logpass = $_POST['pass'];
+						if($logmail==""||$logpass==""){
+							echo "Hãy điền đầy đủ thông tin";
+						}else{
+							$sql="SELECT * FROM `account` WHERE email='$logmail' and password='$logpass'";
+							$query=mysqli_query($connect, $sql);
+							$num_rows=mysqli_num_rows($query);
+							if($num_rows!=0){
+								header("Location: main.php");
+								die();
+							}else{
+								echo "no";
+							}
+						}
+					}
+					//Đóng database
+					$connect->close();
+				?>
 			</div>
 		</div>
 	</div>

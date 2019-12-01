@@ -25,10 +25,16 @@ if(isset($_POST['submit'])){
         $query=mysqli_query($connect, $sql);
         $num_rows=mysqli_num_rows($query);
         if($num_rows!=0){
+            $row=mysqli_fetch_assoc($query);
+            $_SESSION['drid']=$row['idacc'];
+            $_SESSION['nick']=$row['nicknam'];
+            $_SESSION['name']=$row['accname'];
+            $_SESSION['age']=$row['age'];
+            $_SESSION['sex']=$row['idsex'];
+            $_SESSION['slogan']=$row['slogan'];
+            $_SESSION['info']=$row['moreinfo'];
             header('Location:../main.php');
             die();
-            // echo "cc";
-            // echo "<a href=../main.php>bấm</a>";
         }
         else{
             header('Location: login.php');

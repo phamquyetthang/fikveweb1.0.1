@@ -521,7 +521,9 @@
 #otuychon span{
 	color: black;
 }
-
+.logout{
+	color: #000;
+}
 /* comment  */
 .commenttus{
 	position: fixed;

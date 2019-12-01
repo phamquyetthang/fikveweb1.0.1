@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(empty($_SESSION['drid'])){
+	header('Location: index.php');
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -374,10 +380,15 @@
 
 					// echo ($myname);
 						//echo ('helo');
+						// echo $_SESSION['name'];
 					?>
 				</div>
 				<div id="nickNameinfo" class="infochild1">
-					<span>Nick name:</span>
+					<span>Nick name:
+						<?php
+							echo $_SESSION['nick'];
+						?>
+					</span>
 				</div>
 				<div id="myage" class="infochild2">
 					<span>Tuổi:</span>
@@ -533,7 +544,9 @@ abcsd
 	<button class="naptien">Nạp vào tài khoản</button>
 </div>
 <div id="otuychon">
-	<a class="logout " href="index.php"><span>Đăng xuất</span></a>
+	<form action="controller/out.php" method="post">
+	<input type="submit" value="Đăng xuất" name="logout" class="logout" >
+	</form>
 	<button class="caidat"><span>Cài Đặt</span></button>
 </div>
 

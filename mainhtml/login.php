@@ -38,7 +38,7 @@ session_start();
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 			<a id="back" class="far fa-times eback" href="../index.php"></a>
-				<form class="login100-form validate-form" method="post" action="cc.php">
+				<form class="login100-form validate-form" method="post" action="../model/in.php">
 					<span class="login100-form-title p-b-55">
 						Fikve
 					</span>

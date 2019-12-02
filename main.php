@@ -370,7 +370,12 @@ if(empty($_SESSION['drid'])){
 	<div class="myinfomation" id="myinfomation">
 		<div class="infoleft">
 			<div class="avttop">
-				
+				<?php
+					// require_once ("controller/connect.php");
+					require_once ("model/loadimg.php");
+					echo '<img src="'.$img.'" alt="avt của cậu đó">';
+				?>
+			 	<!-- <img src="resources/img/dp.jpg" alt="avt của cậu đó"> -->
 			</div>
 			<div class="infobottom">
 				<div id="myNameinfo" class="infochild1">

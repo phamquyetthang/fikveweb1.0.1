@@ -19,6 +19,7 @@ if(isset($_POST['submit'])){
     $logmail = $_POST['email'];
     $logpass = $_POST['pass'];
     if($logmail==""||$logpass==""){
+        header('Location: ../mainhtml/login.php');
         echo "Hãy điền đầy đủ thông tin";
     }else{
         $sql="SELECT * FROM `account` WHERE email='$logmail' and password='$logpass'";
@@ -37,7 +38,7 @@ if(isset($_POST['submit'])){
             die();
         }
         else{
-            header('Location: login.php');
+            header('Location: ../mainhtml/login.php');
             die();
         }
     }

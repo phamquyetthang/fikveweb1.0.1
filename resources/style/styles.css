@@ -21,6 +21,12 @@ body{
 		height: 30px;
 	}
 }
+img{
+	width: 100%;
+ 	height: 100%;
+	object-fit: cover;
+	object-position: center; 
+}
 /*..................................*/
 /*header*/
 .header{
@@ -98,9 +104,15 @@ header button{
 	position: fixed;
 	left: 1120px;
 	border: hidden;
-	width: 50px;
+	top: 10px;
+	width: 150px;
 	height: 50px;
 	border-radius: 50%;
+
+}
+.moneys span{
+	color: #000;
+	display: inline;
 }
 .options{ 
 	position: fixed;
@@ -138,7 +150,13 @@ header button{
 	border: hidden;
 	text-decoration: none;
 }
-
+.yourinfo img{
+	margin-top: 5px;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 1px solid thistle;
+}
 .message{	 
 	margin-top: 10px;
 	width: 60px;
@@ -313,6 +331,14 @@ header button{
 	border-top-right-radius: 10px;
 
 }
+.headh2s{
+	position: absolute;
+	width: 100%;
+	height: 45px;
+	border-bottom: thistle 1px solid;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
 .avt{
 	width: 38px;
 	height: 38px;
@@ -329,6 +355,12 @@ header button{
 	top: 1px;
 	background-image: url(../img/dp.jpg);
 }
+.posiavth2s{
+	position: absolute;
+	left: 5px;
+	top: 2px;
+	background-image: url(../img/dp.jpg);
+}
 .banthems{
 	position: absolute;
 	
@@ -343,7 +375,6 @@ header button{
 	/* background-color: #00a1f2; */
 }
 #nickname{
-	
 	position: absolute;
 	top:3px;
 	left: 50px;
@@ -367,9 +398,18 @@ header button{
 .statushs{
 	position: absolute;
 	top: 42px;
-	width: 450px;
+	width: 100%;
 	height: 67px;
-	/* background-color: turquoise; */
+	border-bottom: thistle 1px solid;
+	padding-top: 5px;
+	padding-left: 10px;
+	color: black;
+}
+.statush2s{
+	position: absolute;
+	top: 42px;
+	width: 100%;
+	height: 50px;
 	border-bottom: thistle 1px solid;
 	padding-top: 5px;
 	padding-left: 10px;
@@ -381,6 +421,18 @@ header button{
 	bottom: 45px;
 	width: 462px;
 	height: 369px;
+	background-color: cadetblue;
+	outline: #979A9A 1px solid;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(../img/dbbg.jpg);
+}
+.contenth2s{
+	position: absolute;
+	bottom: 45px;
+	width: 820px;
+	height: 460px;
 	background-color: cadetblue;
 	outline: #979A9A 1px solid;
 	background-size: cover;
@@ -411,7 +463,20 @@ header button{
 	border: thistle;
 	padding: 0xp;
 }
+.endh2s{
+	position: absolute;
+	bottom: 0px;
+	width: 462px;
+	height: 45px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: thistle;
+	padding: 0xp;
+}
 .endhs button{
+	color: aqua;
+}
+.endh2s button{
 	color: aqua;
 }
 .thatims{
@@ -488,8 +553,8 @@ header button{
 	background-image: url(../img/lgbt.png);
 	background-size: cover;
 	background-position: center;
-	width: 32px;
-	height: 32px;
+	width: 30px;
+	height: 30px;
 	background-color: inherit;
 	border: hidden;
 }
@@ -542,17 +607,23 @@ header button{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
+	overflow: hidden;
 	display: inline-block;
+}
+#avttrender img{
+	width: 100%;
+ 	height: 100%;
+	object-fit: cover;
+	object-position: center; 
 }
 #nametrender{
 	position: absolute;
 	/* border: #00a1f2 1px solid; */
 	left: 78px;
 	top: 3px;
-	font-size: 17px;
+	font-size: 16px;
 	height: 20px;
-	max-width: 170px;
+	max-width: 180px;
 	font-style: normal;
 	font-family: Arial;
 	color: black;

@@ -50,10 +50,15 @@ if(empty($_SESSION['drid'])){
 			</button>
 		</div>
 		
-		<div>
-		<button onclick="openLit('omoney','sukienhai')" class="fas fa-heart-circle icsip cu-p moneys" title="heart coin">
-		</button>
-		<!-- <span>100</span> -->
+		<div class="moneys">
+			<button onclick="openLit('omoney','sukienhai')" class="fas fa-heart-circle icsip cu-p" title="heart coin">
+			</button>
+			<span>
+				<?php 
+					require_once ("model/loadinfo.php");
+					echo $mymoney;
+				?>
+			</span>
 		</div>
 		
 		<div>
@@ -66,7 +71,13 @@ if(empty($_SESSION['drid'])){
 <!--	lề trái-->
 
 	<div class="letrai">
-		<button onclick="showMyinfo('myinfomation')" class="fas fa-user-circle icsip cu-p yourinfo" title="Thông tin của bạn"></button>
+		<button onclick="showMyinfo('myinfomation')" class="icsip cu-p yourinfo" title="Thông tin của bạn">
+		<!-- fas fa-user-circle  -->
+			<?php
+				require_once ("model/loadinfo.php");
+				echo '<img src="'.$myavt.'" alt="avt của cậu đó">';
+			?>
+		</button>
 		<button class="fas fa-comment-lines icsip cu-p message" onclick="openAny('mymess')" title="Tin nhắn"></button>
 		<!-- <button class="far fa-user-friends icsip cu-p knews"></button> -->
 		<button class="fal fa-chart-line icsip cu-p bxhcn" title="Theo dõi cá nhân" onclick="openAny('bxhcanhan')"></button>
@@ -140,26 +151,26 @@ if(empty($_SESSION['drid'])){
 
 			</div>
 		</div>
-		<div class="hop1s">
-			<div class="headhs">
-				<div class="avt posiavths"></div>
+		<!-- <div class="hop2s">
+			<div class="headh2s">
+				<div class="avt posiavth2s"></div>
 				<div id="nickname"></div>
 				<div id="timeoftus"></div>
 				<div id="khoangcach"></div>
 				<button class="far fa-times cu-p icsip banthems"></button>
 			</div>
-			<div class="statushs"></div>
-			<div class="contenths  ">
+			<div class="statush2s"></div>
+			<div class="contenth2s">
 				<button class="fal fa-info-circle cu-p report"></button>
 			</div>
-			<div class="endhs">
+			<div class="endh2s">
 					<button class="fad fa-heart cu-p icsip thatims"></button>
 					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
 					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
 					<button class="fad fa-star cu-p icsip quantams"></button>
 	
 			</div>
-		</div>
+		</div> -->
 		<?php
 			for ($i = 0; $i < 200; $i++){
 				echo '<div class="hop1s">
@@ -262,104 +273,103 @@ if(empty($_SESSION['drid'])){
 		</div>
 		<div id="manche"></div>
 		<div id="tabrankboy" class="rankdisplay">
-			<div class="ranks cu-p">
-				<div id="stts">01</div>
-				<div id="avttrender" class="img5"></div>
-				<div id="nametrender">Phúc Vinh</div>
-				<div id="scoretrender">1000</div>
-				<div id="slogantrender"></div>
-			</div>
-			<div class="ranks cu-p">
-				<div id="stts">02</div>
-				<div id="avttrender" class="img6"></div>
-				<div id="nametrender">Không Phải Phúc</div>
-				<div id="scoretrender">800</div>
-				<div id="slogantrender">Điếu thuốc tàn bên ly rượu cạn </br> 
-					Đời khốn nạn biết kết bạn cùng ai </div>
-			</div>
-			<div class="ranks cu-p">
-				<div id="stts">03</div>
-				<div id="avttrender" class="img4"></div>
-				<div id="nametrender">Sơn Thần</div>
-				<div id="scoretrender">788</div>
-				<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-			</div>
-			<div class="ranks cu-p">
-				<div id="stts">04</div>
-				<div id="avttrender" class="img7"></div>
-				<div id="nametrender">Người đi ngoài phố</div>
-				<div id="scoretrender">762</div>
-				<div id="slogantrender">Chiều bỡ ngỡ bơ vơ</div>
-			</div>
 			<?php
-			 for($i = 5; $i < 11; $i++){
-				 if($i<=9){
-					echo '<div class="ranks cu-p">
-					<div id="stts">0'.$i.'</div>
-					<div id="avttrender" class="img7"></div>
-					<div id="nametrender">Nickname</div>
-					<div id="scoretrender">Points</div>
-					<div id="slogantrender">slogan</div>
-					</div>';
-				 }else {echo '<div class="ranks cu-p">
-				 <div id="stts">'.$i.'</div>
-				 <div id="avttrender" class="img7"></div>
-				 <div id="nametrender">Nickname</div>
-				 <div id="scoretrender">Points</div>
-				 <div id="slogantrender">slogan</div>
-			 	</div>';}
-				 
-			 }
+				require_once("controller/connect.php");
+
+				$sql = "SELECT * FROM `account` WHERE idsex='1' ORDER BY tuongtac DESC LIMIT 10";
+            	$ket_qua = $connect->query($sql);
+				//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
+				if (!$ket_qua) {
+					die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
+					exit();
+				}
+            	//Dùng vòng lặp while truy xuất các phần tử trong table
+            	$rank=1;
+            	while ($row= $ket_qua->fetch_array(MYSQLI_ASSOC)) {
+					// chuyển mảng về 1 phần tử
+					$myavt=$row['avt'];
+					$mynick=$row['nicknam'];
+					$myslo=$row['slogan'];
+					$mypoint=$row['tuongtac'];
+					if($rank<10){
+						$rank2="0".$rank;
+					}else{ $rank2=$rank; }
+					echo    '<div class="ranks cu-p">
+							<div id="stts">'.$rank2.'</div>
+							<div id="avttrender"><img src="'.$myavt.'" alt="avt ai đó"></div>
+							<div id="nametrender">'.$mynick.'</div>
+							<div id="scoretrender">'.$mypoint.'</div>
+							<div id="slogantrender">'.$myslo.'</div>
+							</div>';
+					$rank++;
+            	}
 			?>
 		</div>
 
 		<div id="tabrankgirl" class="rankdisplay" style="display: none;">
-		<?php
-			 for($i = 1; $i < 11; $i++){
-				if($i<=9){
-					echo '<div class="ranks cu-p">
-					<div id="stts">0'.$i.'</div>
-					<div id="avttrender" class="img7"></div>
-					<div id="nametrender">Nickname</div>
-					<div id="scoretrender">Points</div>
-					<div id="slogantrender">slogan</div>
-					</div>';
-				 }else {echo '<div class="ranks cu-p">
-				 <div id="stts">'.$i.'</div>
-				 <div id="avttrender" class="img7"></div>
-				 <div id="nametrender">Nickname</div>
-				 <div id="scoretrender">Points</div>
-				 <div id="slogantrender">slogan</div>
-			 	</div>';}
-			 }
+			<?php
+				require_once("controller/connect.php");
+
+				$sql = "SELECT * FROM `account` WHERE idsex='2' ORDER BY tuongtac DESC LIMIT 10";
+				$ket_qua = $connect->query($sql);
+				//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
+				if (!$ket_qua) {
+					die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
+					exit();
+				}
+				//Dùng vòng lặp while truy xuất các phần tử trong table
+				$rank=1;
+				while ($row= $ket_qua->fetch_array(MYSQLI_ASSOC)) {
+					// chuyển mảng về 1 phần tử
+					$myavt=$row['avt'];
+					$mynick=$row['nicknam'];
+					$myslo=$row['slogan'];
+					$mypoint=$row['tuongtac'];
+					if($rank<10){
+						$rank2="0".$rank;
+					}else{ $rank2=$rank; }
+					echo    '<div class="ranks cu-p">
+							<div id="stts">'.$rank2.'</div>
+							<div id="avttrender"><img src="'.$myavt.'" alt="avt ai đó"></div>
+							<div id="nametrender">'.$mynick.'</div>
+							<div id="scoretrender">'.$mypoint.'</div>
+							<div id="slogantrender">'.$myslo.'</div>
+							</div>';
+					$rank++;
+				}
 			?>
 		</div>
 		<div id="tabranklgbt" class="rankdisplay"  style="display: none;">
-				<div class="ranks cu-p">
-						<div id="stts">01</div>
-						<div id="avttrender" class="img3"></div>
-						<div id="nametrender">Món quà của tạo hóa</div>
-						<div id="scoretrender">1000</div>
-						<div id="slogantrender">Điệp vụ hai mang tại bang tổ lái phái đua xe </div>
-					</div>
-					<?php
-			 for($i = 2; $i < 11; $i++){
-				if($i<=9){
-					echo '<div class="ranks cu-p">
-					<div id="stts">0'.$i.'</div>
-					<div id="avttrender" class="img7"></div>
-					<div id="nametrender">Nickname</div>
-					<div id="scoretrender">Points</div>
-					<div id="slogantrender">slogan</div>
-					</div>';
-				 }else {echo '<div class="ranks cu-p">
-				 <div id="stts">'.$i.'</div>
-				 <div id="avttrender" class="img7"></div>
-				 <div id="nametrender">Nickname</div>
-				 <div id="scoretrender">Points</div>
-				 <div id="slogantrender">slogan</div>
-			 	</div>';}
-			 }
+			<?php
+				require_once("controller/connect.php");
+
+				$sql = "SELECT * FROM `account` WHERE idsex='3' ORDER BY tuongtac DESC LIMIT 10";
+				$ket_qua = $connect->query($sql);
+				//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
+				if (!$ket_qua) {
+					die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
+					exit();
+				}
+				//Dùng vòng lặp while truy xuất các phần tử trong table
+				$rank=1;
+				while ($row= $ket_qua->fetch_array(MYSQLI_ASSOC)) {
+					// chuyển mảng về 1 phần tử
+					$myavt=$row['avt'];
+					$mynick=$row['nicknam'];
+					$myslo=$row['slogan'];
+					$mypoint=$row['tuongtac'];
+					if($rank<10){
+						$rank2="0".$rank;
+					}else{ $rank2=$rank; }
+					echo    '<div class="ranks cu-p">
+							<div id="stts">'.$rank2.'</div>
+							<div id="avttrender"><img src="'.$myavt.'" alt="avt ai đó"></div>
+							<div id="nametrender">'.$mynick.'</div>
+							<div id="scoretrender">'.$mypoint.'</div>
+							<div id="slogantrender">'.$myslo.'</div>
+							</div>';
+					$rank++;
+				}
 			?>
 
 		</div>
@@ -370,54 +380,98 @@ if(empty($_SESSION['drid'])){
 	<div class="myinfomation" id="myinfomation">
 		<div class="infoleft">
 			<div class="avttop">
+				<div class="doiavt">
+					<form action="" method="post">
+						<input type="button" value="Thay đổi" name="btndoiavt" class="cu-p"></br>
+						<input type="button" value="Xem ảnh" name="btnxemavt" class="cu-p">
+					</form>
+				</div>
 				<?php
-					// require_once ("controller/connect.php");
-					require_once ("model/loadimg.php");
-					echo '<img src="'.$img.'" alt="avt của cậu đó">';
+					require_once ("model/loadinfo.php");
+					echo '<img src="'.$myavt.'" alt="avt của cậu đó">';
 				?>
-			 	<!-- <img src="resources/img/dp.jpg" alt="avt của cậu đó"> -->
+				
 			</div>
 			<div class="infobottom">
 				<div id="myNameinfo" class="infochild1">
 					<span>Tên:</span>
 					<?php 
-					// include ('C:/xampp/htdocs/fikveweb/fikveweb/controller/selectdata.php');
-
-					// echo ($myname);
-						//echo ('helo');
-						// echo $_SESSION['name'];
+						require_once ("model/loadinfo.php");
+						echo $myname;
 					?>
 				</div>
 				<div id="nickNameinfo" class="infochild1">
-					<span>Nick name:
-						<?php
-							echo $_SESSION['nick'];
-						?>
-					</span>
+					<span>Nick name:</span>
+					<?php 
+						require_once ("model/loadinfo.php");
+						echo $mynick;
+					?>
 				</div>
 				<div id="myage" class="infochild2">
 					<span>Tuổi:</span>
+					<?php 
+						require_once ("model/loadinfo.php");
+						echo $myage;
+					?>
 				</div>
 				<div id="mygender" class="infochild2">
 					<span>Giới tính:</span>
+					<?php 
+						require_once ("model/loadinfo.php");
+						if($mysex=='1'){
+							echo 'Nam';
+						}
+						else if($mysex=='2'){
+							echo 'Nữ';
+						}
+						else{
+							echo 'Món quàn của tạo hóa';
+						}
+					?>
 				</div>
 				<div id="myslogan" class="infochild3">
 					<span>Slogan:</span>
+					<?php 
+						require_once ("model/loadinfo.php");
+						echo $myslo;
+					?>
 				</div>
 
 				<div id="moreinfo" class="infochild3">
 					<span>Nói thêm về bạn:</span>
+					<?php 
+						require_once ("model/loadinfo.php");
+						echo $myin;
+					?>
 				</div>
 			</div>
 		</div>
 		<div class="hisright">
 			<div class="far fa-times cu-p icsip exit e1" onclick="exitButton()"></div>
 			<?php
-				for($i = 0; $i< 10; $i++){
-					echo '<div class="hop1s myhis"></div>';
+				require_once ("controller/connect.php");
+				$ida=$_SESSION['drid'];
+				$sql = "SELECT * FROM `status` WHERE idacc='$ida' ORDER BY idstatus DESC";
+				$ket_qua = $connect->query($sql);
+				//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
+				if (!$ket_qua) {
+					die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
+					exit();
 				}
+				//Dùng vòng lặp while truy xuất các phần tử trong table
+				while ($row= $ket_qua->fetch_array(MYSQLI_ASSOC)) {
+					// chuyển mảng về 1 phần tử
+					$tustime=$row['time'];
+					$tusimg=$row['img'];
+					$tuscon=$row['multitus'];
+					$sumlike=$row['sumlike'];
+					echo '<div class="hop1s myhis">'.$tustime.' // '.$tuscon.' // '.$tusimg.'</div><hr>';
+				}
+
 			?>
-			<div class="hop1s myhis"></div>
+			<div class="hop1s myhis">
+
+			</div>
 			<div class="hop1s myhis"></div>
 			<div class="hop1s myhis"></div>
 			<div class="hop1s myhis"></div>
@@ -549,7 +603,7 @@ abcsd
 	<button class="naptien">Nạp vào tài khoản</button>
 </div>
 <div id="otuychon">
-	<form action="controller/out.php" method="post">
+	<form action="model/out.php" method="post">
 	<input type="submit" value="Đăng xuất" name="logout" class="logout" >
 	</form>
 	<button class="caidat"><span>Cài Đặt</span></button>

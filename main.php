@@ -453,7 +453,7 @@ require_once ("model/loadinfo.php");
 		</div>
 		
 	</div>
-	<form method="post">
+	<form method="post" class="nocansee" action="model/creatus.php">
 		<input type="text" name="myftus" id="myftus" value="">
 		<input type="text" name="myfimg" id="myfimg" value="">
 		<input type="submit" value="Đăng" class="danganhlen cu-p" id="submytus" name="submytus">
@@ -474,15 +474,7 @@ require_once ("model/loadinfo.php");
 			}, 10);
 		}
 	</script>
-	<?php
-		if(isset($_POST['submytus'])){
-			$mystatus=$_POST['myftus'];
-			$myimgtus=$_POST['myfimg'];
-			$addstatus="INSERT INTO `status`(`idacc`, `multitus`,`img`) 
-						VALUES ('$ida','$mystatus','$myimgtus')";
-			$query=mysqli_query($connect, $addstatus);
-		}
-	?>
+	
 </div>
 </div>
 

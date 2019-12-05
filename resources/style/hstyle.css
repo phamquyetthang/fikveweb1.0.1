@@ -758,7 +758,9 @@
 	border: 1px thistle solid;
 
 }
-
+.nocansee input{
+	color: white;
+}
 /* .e1{
 	position: fixed;
 } */

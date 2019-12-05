@@ -12,10 +12,13 @@ function delManche(el, classname){
 //ham mo nhung tab an
  function showMyinfo(idinfo){
      document.getElementById(idinfo).style.display='block';
+   //   document.getElementById("content").style.display='none';
     addManche(manche, 'manChanAll');
  }
  function openAny(idtabsop){
    document.getElementById(idtabsop).style.display='block';
+   // document.getElementById("content").style.display='none';
+   console.log("222222");
    addManche(manche, 'manChanAll');
 }
 function openLit(idlit, idsk2){
@@ -26,6 +29,7 @@ function openLit(idlit, idsk2){
 //ham dong những tab ẩn
 function closeAny(idtabscl){
    document.getElementById(idtabscl).style.display='none';
+   document.getElementById("content").style.display='block';
    delManche(manche, '');
 }
 

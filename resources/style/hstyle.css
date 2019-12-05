@@ -11,14 +11,14 @@
 	background-color: #000;
 	filter: opacity(0.7);
 	z-index: 100;
+	/* display: none; */
 }
-
-
 
 /* tab myinfo */
 .myinfomation{
 	position: fixed;
 	top: 0px;
+	left: 5px;
 	width: 965px;
 	height: 590px;
 	border: 1px #00a1f2 solid;
@@ -100,8 +100,23 @@
 	top: 0px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	color: #000;
 }
+.hisright::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+	border-radius: 8px;
+}
+.hisright::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+    background-color: gray;
+}
+.hisright::-webkit-scrollbar-track {
+	border-radius: 8px;
+    background-color: #eee;
+} 
 .avttop{
 	position: absolute;
 	width: 300px;
@@ -164,23 +179,31 @@
 
 /* form đăng bài */
 .createtus{
-    position: fixed;
-    top: 0px;
+	position: fixed;
+	top: 22px;
     left: 280px;
 	width: 500px;
 	height: 590px;
 	border: 1px #00a1f2 solid;
 	background-color: #eeeeee;
 	z-index: 1000;
-	margin: 58px 70px;
+	margin: 30px 70px;
 	border-radius: 8px;
+	opacity: 1;
+	/* display: none; */
+}
+#createtus{
 	display: none;
-
-
 }
 .whead{
 	width: 500px;
 	border: none;
+}
+#nickname{
+	position: absolute;
+	top: 8px;
+	left: 50px;
+	color: #000;
 }
 .mytus{
     position: absolute;
@@ -191,7 +214,19 @@
 	border-bottom: thistle 1px solid;
 	overflow: auto;
 	color: #000;
+	z-index: 100;
 }
+.mytus::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+.mytus::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+    background-color: gray;
+}
+.mytus::-webkit-scrollbar-track {
+    background-color: #eee;
+} 
 #mytus{
 	color: #000;
 	margin: 10px;
@@ -203,10 +238,26 @@
 	background-color:inherit;
 	color: #E64398;
 	top: 45px;
-	right: 20px;
+	right: 7px;
 	padding: 0px;
 	font-size: 24px;
-	/* border-radius: 10px; */
+	z-index: 200;
+}
+.okok{
+	position: absolute;
+	background-color:#E64398;
+	color: #000;
+	top: 75px;
+	right: 7px;
+	padding: 0px;
+	z-index: 200;
+	border: thistle 1px solid;
+	font-size: 14px;
+	border-radius: 8px;
+	width: auto;
+	float: left;
+	padding: 5px;
+	cursor: pointer;
 }
 .myimage{
     position: absolute;
@@ -287,7 +338,17 @@
 	top: 430px;
 	overflow-y: auto;
 }
-
+.libralytus::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+.libralytus::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+    background-color: gray;
+}
+.libralytus::-webkit-scrollbar-track {
+    background-color: #eee;
+} 
 .buttontus{
 	color: black;
 	border: thistle 1px solid;
@@ -302,6 +363,18 @@
 	
 }
 /* //// */
+#myftus{
+	position: absolute;
+	z-index: 99;
+	border: hidden;
+	background-color: #eee;
+}
+#myfimg{
+	position: absolute;
+	z-index: 99;
+	border: hidden;
+	background-color: #eee;
+}
 .danganhlen{
 	position: absolute;
 	width: 500px;
@@ -320,6 +393,7 @@
 .mymess{
 	position: fixed;
 	top: 0px;
+	left: 5px;
 	width: 965px;
 	height: 590px;
 	border: 1px #00a1f2 solid;
@@ -625,6 +699,7 @@
 #bxhcanhan{
 	position: fixed;
 	top: 0px;
+	left: 5px;
 	width: 960px;
 	height: 580px;
 	border: 1px #00a1f2 solid;
@@ -638,6 +713,7 @@
 #nguoiquantam{
 	position: fixed;
 	top: 0px;
+	left: 5px;
 	width: 830px;
 	height: 580px;
 	border: 1px #00a1f2 solid;
@@ -649,6 +725,17 @@
 	color: #585858;
 	overflow: auto;
 }
+#nguoiquantam::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+#nguoiquantam::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+    background-color: gray;
+}
+#nguoiquantam::-webkit-scrollbar-track {
+    background-color: #eee;
+} 
 .eachcare{
 	width: 250px;
 	height: 50px;
@@ -662,6 +749,6 @@
 
 }
 
-.e1{
+/* .e1{
 	position: fixed;
-}
+} */

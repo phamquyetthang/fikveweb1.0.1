@@ -1,3 +1,4 @@
 # fikveweb1.0.1
-một số icon có thể không hiển thị/
-nên chạy trên chrome
+Code chính ở main.php :)))
+Nhóm tập chung hầu hết thời gian vào phần font-end nên back-end chưa hoàn thiện
+

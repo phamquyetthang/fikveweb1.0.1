@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 01, 2019 lúc 10:17 AM
+-- Thời gian đã tạo: Th12 05, 2019 lúc 08:40 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -33,14 +33,14 @@ CREATE TABLE `account` (
   `email` varchar(225) NOT NULL,
   `accname` varchar(225) NOT NULL,
   `password` varchar(225) NOT NULL,
-  `nicknam` varchar(225) DEFAULT NULL,
-  `avt` text DEFAULT NULL,
+  `nicknam` varchar(225) NOT NULL DEFAULT 'Anyone',
+  `avt` text NOT NULL DEFAULT 'resources/img/dp.jpg',
   `idsex` int(3) NOT NULL,
   `idposition` int(11) NOT NULL,
   `slogan` text DEFAULT NULL,
   `moreinfo` text DEFAULT NULL,
   `age` int(11) NOT NULL,
-  `tuongtac` int(11) DEFAULT NULL,
+  `tuongtac` int(11) NOT NULL DEFAULT 0,
   `money` int(11) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -49,30 +49,33 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`idacc`, `email`, `accname`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`, `tuongtac`, `money`) VALUES
-(1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 18, 1000, 100),
-(2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'sasdsffdf', 1, 1, 'sdasff', 'sdffsdfs', 20, 980, 100),
-(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'fcgvhbn', 2, 4, 'cfghgbn', 'dfghhjj', 18, 600, 100),
-(7, 'phuc@gmail.com', 'Phúc', '345678', 'Không Phải Phúc', NULL, 1, 6, NULL, NULL, 18, 880, 100),
-(8, 'son@gmail.com', 'Đặng Anh Sơn', '543212', 'Sơn Thần', NULL, 1, 12, NULL, NULL, 17, 600, 100),
-(9, 'thuong@gmail.com', 'Tạ Quang Thưởng', '987654', 'Kỳ Quan Thiên Nhiên', NULL, 3, 18, NULL, NULL, 19, 780, 100),
-(10, 'thai@gmail.com', 'Nguyễn Minh Thái', '345678', 'Siêu', NULL, 1, 18, 'Nothing is impossible', NULL, 19, 920, 100),
-(11, 'troang@gmail.com', 'Kiều Trang', '3245646', 'Trang Lang Thang', NULL, 2, 8, NULL, NULL, 20, 888, 100),
-(12, 'thanh@gmail.com', 'Ngô Thị Thanh', '234567', 'Nguyễn Thị Tý', NULL, 2, 6, NULL, NULL, 20, 222, 100),
-(13, 'huong@gmail.com', 'Nguyễn Lan Hương', '123764', 'Không mùi', NULL, 2, 23, NULL, NULL, 20, 460, 100),
-(14, 'may@gmail.com', 'Vũ Thị Mây', '2423465', 'Để Gió Cuốn Đi', NULL, 2, 25, NULL, NULL, 20, 890, 100),
-(15, 'nghiep@gmail.com', 'Phạm Nghiệp', '76543', 'Not Quật', NULL, 3, 2, NULL, NULL, 24, 111, 100),
-(16, 'viet@gmail.com', 'Văn Việt', '987653', 'Dân Tộc Kinh', NULL, 3, 17, NULL, NULL, 20, 456, 100),
-(17, 'truong@gmail.com', 'Nguyễn Trường', '543234', 'Không Phải Trường', NULL, 3, 11, NULL, NULL, 20, 125, 100),
-(18, 'long@gmail.com', 'Văn Long', '4566787', 'Ranh Con', NULL, 3, 14, NULL, NULL, 18, 695, 100),
-(19, 'phuclong@gmail.com', 'Phúc Long', '23456544', NULL, NULL, 1, 7, NULL, NULL, 20, NULL, 100),
-(20, 'phucthanh@gmail.com', 'Phúc Thành', '23456544', NULL, NULL, 1, 7, NULL, NULL, 20, NULL, 100),
-(12234, 'thangcho@ancut.com', 'thắng ăn cứt', '12234bafdf', 'gdf', '342', 1, 1, 'dsfd', 'sdfsdf', 56, 1000, 100),
-(12235, 'abc@gmail.com', 'fdshfgkjdsf', 'adf3q2rsdf', 'gdf', '342', 1, 1, 'dsfd', NULL, 45, 1000, 100),
-(12236, 'aghfjkadgdf', 'sdafasd', 'ádfsdafwe', NULL, NULL, 3, 7, NULL, NULL, 45, NULL, 100),
-(12237, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
-(12238, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
-(12239, 'longngoc@gmail.com', 'long ngọc', '123456', NULL, NULL, 3, 6, NULL, NULL, 22, NULL, 100),
-(12240, 'hongngoc@gmail.com', 'Hồng Ngọc', '345623', NULL, NULL, 2, 5, NULL, NULL, 24, NULL, 100);
+(1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'resources/img/vic1.jpg', 1, 1, 'sdasff', 'sdffsdfs', 18, 1000, 100),
+(2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'resources/img/dp.jpg\r\n', 1, 1, 'sdasff', 'sdffsdfs', 20, 980, 100),
+(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'resources/img/thuy1.jpg\r\n', 2, 4, 'cfghgbn', 'dfghhjj', 18, 600, 100),
+(7, 'phuc@gmail.com', 'Phúc', '345678', 'Không Phải Phúc', 'resources/img/phuc1.jpg\r\n', 1, 6, NULL, NULL, 18, 880, 100),
+(8, 'son@gmail.com', 'Đặng Anh Sơn', '543212', 'Sơn Thần', 'resources/img/son2.jpg\r\n', 1, 12, NULL, NULL, 17, 600, 100),
+(9, 'thuong@gmail.com', 'Tạ Quang Thưởng', '987654', 'Kỳ Quan Thiên Nhiên', 'resources/img/thuong1.jpg', 3, 18, NULL, NULL, 19, 780, 100),
+(10, 'thai@gmail.com', 'Nguyễn Minh Thái', '345678', 'Siêu', 'resources/img/thai1.jpg', 1, 18, 'Nothing is impossible', NULL, 19, 920, 100),
+(11, 'troang@gmail.com', 'Kiều Trang', '3245646', 'Trang Lang Thang', 'resources/img/trang1.jpg', 2, 8, NULL, NULL, 20, 888, 100),
+(12, 'thanh@gmail.com', 'Ngô Thị Thanh', '234567', 'Nguyễn Thị Tý', 'resources/img/dp.jpg', 2, 6, NULL, NULL, 20, 222, 100),
+(13, 'huong@gmail.com', 'Nguyễn Lan Hương', '123764', 'Không mùi', 'resources/img/dp.jpg', 2, 23, NULL, NULL, 20, 460, 100),
+(14, 'may@gmail.com', 'Vũ Thị Mây', '2423465', 'Để Gió Cuốn Đi', 'resources/img/dp.jpg', 2, 25, NULL, NULL, 20, 890, 100),
+(15, 'nghiep@gmail.com', 'Phạm Nghiệp', '76543', 'Not Quật', 'resources/img/nghiep1.jpg', 3, 2, 'Cảm ơn tạo hóa', NULL, 24, 111, 100),
+(16, 'viet@gmail.com', 'Văn Việt', '987653', 'Dân Tộc Kinh', 'resources/img/viet1.jpg', 3, 17, 'thu đến và đi như những gì đã sắp đặt', NULL, 20, 456, 100),
+(17, 'truong@gmail.com', 'Nguyễn Trường', '543234', 'Không Phải Trường', 'resources/img/dp.jpg', 3, 11, NULL, NULL, 20, 125, 100),
+(18, 'long@gmail.com', 'Văn Long', '4566787', 'Ranh Con', 'resources/img/dp.jpg', 3, 14, NULL, NULL, 18, 695, 100),
+(19, 'phuclong@gmail.com', 'Phúc Long', '23456544', 'Anyone', 'resources/img/dp.jpg', 1, 7, NULL, NULL, 20, 222, 100),
+(20, 'phucthanh@gmail.com', 'Phúc Thành', '23456544', '', 'resources/img/dp.jpg', 1, 7, NULL, NULL, 20, 0, 100),
+(12234, 'thangcho@ancut.com', 'thắng ăn cứt', '12234bafdf', 'Super Trường', 'resources/img/dp.jpg', 1, 1, 'dsfd', 'sdfsdf', 56, 1000, 100),
+(12235, 'abc@gmail.com', 'fdshfgkjdsf', 'adf3q2rsdf', 'Đông tà', 'resources/img/dp.jpg', 1, 1, 'dsfd', NULL, 45, 1000, 100),
+(12236, 'aghfjkadgdf', 'sdafasd', 'ádfsdafwe', '', 'resources/img/dp.jpg', 3, 7, NULL, NULL, 45, 0, 100),
+(12237, 'longngoc@gmail.com', 'long ngọc', '123456', 'Anyone', 'resources/img/dp.jpg', 3, 6, NULL, NULL, 22, 0, 100),
+(12238, 'longngoc@gmail.com', 'long ngọc', '123456', '', 'resources/img/dp.jpg', 3, 6, NULL, NULL, 22, 0, 100),
+(12239, 'longngoc@gmail.com', 'long ngọc', '123456', 'Anyone', 'resources/img/dp.jpg', 3, 6, NULL, NULL, 22, 0, 100),
+(12240, 'hongngoc@gmail.com', 'Hồng Ngọc', '345623', '', 'resources/img/dp.jpg', 2, 5, NULL, NULL, 24, 0, 100),
+(12241, 'quyetthang.phucchi@gmail.com', 'Nguyễn Phúc Vinh', 'anhyeuem', 'Phúc Chi', 'resources/img/vic1.jpg', 1, 6, NULL, NULL, 22, 0, 100),
+(12242, 'nhumay@gmail.com', 'Như Mây', '987654', '', 'resources/img/dp.jpg', 2, 19, NULL, NULL, 22, 0, 100),
+(12243, 'thanhthanh@gmail.com', 'Ngô Thị Thanh', '852963', 'Anyone', 'resources/img/dp.jpg', 2, 19, NULL, NULL, 22, 0, 100);
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,8 @@ CREATE TABLE `activeone` (
   `idacc` int(8) NOT NULL,
   `multilcoment` text NOT NULL,
   `liked` tinyint(1) NOT NULL,
-  `starchoose` tinyint(1) NOT NULL
+  `starchoose` tinyint(1) NOT NULL,
+  `idtus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -176,12 +180,31 @@ CREATE TABLE `status` (
   `idstatus` int(11) NOT NULL,
   `idacc` int(11) NOT NULL,
   `multitus` text NOT NULL,
-  `time` point NOT NULL,
-  `idacti` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp(),
   `img` text NOT NULL,
-  `sumlike` int(11) NOT NULL,
-  `sumcom` int(11) NOT NULL
+  `sumlike` int(11) NOT NULL DEFAULT 0,
+  `sumcom` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='bảng status';
+
+--
+-- Đang đổ dữ liệu cho bảng `status`
+--
+
+INSERT INTO `status` (`idstatus`, `idacc`, `multitus`, `time`, `img`, `sumlike`, `sumcom`) VALUES
+(3, 12241, 'Từ ấy trong tôi bừng nắng hạ', '2019-12-02 09:24:42', 'resources/img/vic1.jpg', 100, 101),
+(4, 12241, 'test time', '2019-12-02 09:27:56', 'resources/img/thuy1.jpg', 201, 101),
+(5, 12241, 'anh đẹp trai', '2019-12-03 11:08:30', 'http://localhost/dalab/vic1.jpg', 10, 8),
+(7, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Em ngược đường ngược nắng để yêu anh		', '2019-12-03 11:09:55', 'http://localhost/fikveweb1.0.1/model/uploads/1575370713hluan.png', 43, 21),
+(10, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa		', '2019-12-03 11:11:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575371482led_Diagram.png', 1232, 1212),
+(32, 12241, ' 			Các vợ ơi		', '2019-12-03 15:03:14', 'http://localhost/fikveweb1.0.1/model/uploads/15753730701.jpg', 74, 12),
+(33, 1, ' 			Một là anh đang nói dối					Hai là anh đang nói dối nhiều lần		', '2019-12-03 15:05:50', 'http://localhost/fikveweb1.0.1/model/uploads/1575385534.jpg', 121, 2),
+(44, 12243, ' 			Các chồng ơi		', '2019-12-04 03:42:49', 'http://localhost/fikveweb1.0.1/model/uploads/1575430070.jpg', 980, 4),
+(52, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Nước mắt đã rơi, trò chơi kết thúc		', '2019-12-04 12:07:08', 'http://localhost/fikveweb1.0.1/model/uploads/1575461215bb474834fff9739b48923ad10e5.png', 0, 0),
+(54, 3, 'em đẹp em có quyền', '2019-12-04 14:02:50', 'resources/img/thanh1.jpg', 123, 32),
+(55, 10, ' 			Bên em nắng rồi bên anh thì vẫn mưa		', '2019-12-04 14:05:22', 'http://localhost/fikveweb1.0.1/model/uploads/1575468289.jpg', 2, 6),
+(56, 12241, ' 			Em ngược đường ngược nắng để yêu anh					Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Nước mắt đã rơi, trò chơi kết thúc		', '2019-12-05 04:52:52', 'http://localhost/fikveweb1.0.1/model/uploads/1575521564bb474834fff9739b48923ad10e5.png', 0, 0),
+(57, 15, ' 			Một là anh đang nói dối		.<br>			Hai là anh đang nói dối nhiều lần		', '2019-12-05 06:44:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575528247p1.jpg', 0, 0),
+(59, 15, ' 			Em ngược đường ngược nắng để yêu anh		', '2019-12-05 06:56:29', 'http://localhost/fikveweb1.0.1/model/uploads/1575528985p1.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -224,7 +247,8 @@ ALTER TABLE `account`
 --
 ALTER TABLE `activeone`
   ADD PRIMARY KEY (`idactive`),
-  ADD KEY `idacc` (`idacc`);
+  ADD KEY `idacc` (`idacc`),
+  ADD KEY `idtus` (`idtus`);
 
 --
 -- Chỉ mục cho bảng `comment`
@@ -249,8 +273,7 @@ ALTER TABLE `sexiusm`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`idstatus`),
-  ADD KEY `idacc` (`idacc`),
-  ADD KEY `idacti` (`idacti`);
+  ADD KEY `idacc` (`idacc`);
 
 --
 -- Chỉ mục cho bảng `tuongtac`
@@ -274,7 +297,7 @@ ALTER TABLE `tuscontent`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12241;
+  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12244;
 
 --
 -- AUTO_INCREMENT cho bảng `activeone`
@@ -298,7 +321,7 @@ ALTER TABLE `positionuser`
 -- AUTO_INCREMENT cho bảng `status`
 --
 ALTER TABLE `status`
-  MODIFY `idstatus` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idstatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT cho bảng `tuongtac`
@@ -327,14 +350,14 @@ ALTER TABLE `account`
 -- Các ràng buộc cho bảng `activeone`
 --
 ALTER TABLE `activeone`
-  ADD CONSTRAINT `activeone_ibfk_1` FOREIGN KEY (`idacc`) REFERENCES `account` (`idacc`);
+  ADD CONSTRAINT `activeone_ibfk_1` FOREIGN KEY (`idacc`) REFERENCES `account` (`idacc`),
+  ADD CONSTRAINT `activeone_ibfk_2` FOREIGN KEY (`idtus`) REFERENCES `status` (`idstatus`);
 
 --
 -- Các ràng buộc cho bảng `status`
 --
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`idacc`) REFERENCES `account` (`idacc`),
-  ADD CONSTRAINT `status_ibfk_2` FOREIGN KEY (`idacti`) REFERENCES `activeone` (`idactive`);
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`idacc`) REFERENCES `account` (`idacc`);
 
 --
 -- Các ràng buộc cho bảng `tuongtac`

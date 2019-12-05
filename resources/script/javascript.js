@@ -21,10 +21,17 @@ function delManche(el, classname){
    console.log("222222");
    addManche(manche, 'manChanAll');
 }
-function openLit(idlit, idsk2){
-   document.getElementById(idlit).style.display='block';
-   document.getElementById(idsk2).style.display='block';
+function openLit(idlit){
+   if(document.getElementById(idlit).style.display==="none"){
+      document.getElementById(idlit).style.display="block";
+   }else{
+      document.getElementById(idlit).style.display="none";
+   }
+   // if(document.getElementById(idlit).style.display="block"){
+   //    document.getElementById(idlit).style.display="none";
+   // }
 }
+
 
 //ham dong những tab ẩn
 function closeAny(idtabscl){

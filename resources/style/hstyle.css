@@ -623,8 +623,18 @@
 #otuychon span{
 	color: black;
 }
-.logout{
+.logout,.caidat{
 	color: #000;
+	width: 100px;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 25px;
+	transition: 1s;
+	border: hidden;
+	outline: none;
+}
+.logout:hover,.caidat:hover{
+	background-color: #00a1f2;
 }
 /* comment  */
 .commenttus{

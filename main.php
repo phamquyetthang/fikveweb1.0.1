@@ -40,17 +40,22 @@ require_once ("model/loadinfo.php");
 <!--header-->
 	<header class="header">
 		<div>
-			<a href="main.php"><img class="logo" src="resources/img/logo12.png" alt="logo"></a> 
+			<a class="cu-p">
+				<img class="logo cu-p" src="resources/img/logo12.png" alt="logo">
+				<form action="model/locgt.php" method="post" class="retoma">
+				<input type="submit" name="allsex">
+				</form>
+			</a> 
 		</div>
 		<div id="title">Fikve</div>
 		
 		<div>
-			<button onclick="openLit('othongbao','sukienhai')" class="fas fa-bell icsip cu-p news" title="Thông báo">
+			<button onclick="openLit('othongbao')" class="fas fa-bell icsip cu-p news" title="Thông báo">
 			</button>
 		</div>
 		
 		<div class="moneys">
-			<button onclick="openLit('omoney','sukienhai')" class="fas fa-heart-circle icsip cu-p" title="heart coin">
+			<button onclick="openLit('omoney')" class="fas fa-heart-circle icsip cu-p" title="heart coin">
 			</button>
 			<span>
 				<?php 
@@ -60,7 +65,7 @@ require_once ("model/loadinfo.php");
 		</div>
 		
 		<div>
-		<button onclick="openLit('otuychon','sukienhai')" class="fas fa-align-justify icsip cu-p options" title="tùy chọn">
+		<button onclick="openLit('otuychon')" class="fas fa-align-justify icsip cu-p options" title="tùy chọn">
 		</button>
 		</div>
 	</header>
@@ -121,11 +126,11 @@ require_once ("model/loadinfo.php");
 	<form action="model/locgt.php" method="post">
 	<ul class="bolocgt">
 		    <button class="fad fa-globe-asia cu-p icsip allsex">
-				<input type="submit" class="sendsex" name="allsex">
+				<input type="submit" class="sendsex cu-p" name="allsex">
 			</button>
-			<li><button class="fas fa-mars cu-p icsip sexisms2 posib"><input type="submit" class="sendsex" name="man"></button></li>
-			<li><button class="far fa-venus cu-p icsip sexisms2 posig"><input type="submit" class="sendsex" name="girl"></button></li>
-			<li><button class="lgbt icsip cu-p sexisms2 posil"><input type="submit" class="sendsex" name="lgbt"></button></li>
+			<li><button class="fas fa-mars cu-p icsip sexisms2 posib"><input type="submit" class="sendsex cu-p" name="man"></button></li>
+			<li><button class="far fa-venus cu-p icsip sexisms2 posig"><input type="submit" class="sendsex cu-p" name="girl"></button></li>
+			<li><button class="lgbt icsip cu-p sexisms2 posil"><input type="submit" class="sendsex cu-p" name="lgbt"></button></li>
 	</ul>
 	</form>
 	<!-- nội dung hiển thị -->
@@ -525,11 +530,11 @@ require_once ("model/loadinfo.php");
 <div id="othongbao">
 abcsd
 </div>
-<div id="sukienhai">
+<!-- <div id="sukienhai">
 	<button onclick="closeLit('othongbao','sukienhai')"></button>
 	<button onclick="closeLit('omoney','sukienhai')"></button>
 	<button onclick="closeLit('otuychon','sukienhai')"></button>
-</div>
+</div> -->
 <div id="omoney">
 	<button class="naptien">Nạp vào tài khoản</button>
 </div>

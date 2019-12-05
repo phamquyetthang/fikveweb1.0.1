@@ -207,7 +207,7 @@ header button{
 	height: auto;
 	min-height: 600px;
 	padding-top: 5px;
-	padding-left: 5px;
+	padding-left: 0px;
 	padding-bottom: 100px;
 	background-color: #ddd;
 	border: 1px solid thistle;
@@ -233,25 +233,30 @@ header button{
 .mycreats{
 	color: black;
 	position: fixed;
+	font-size: 14px;
+	left: 75px;
 	z-index: 1;
 	height: 42px;
-	width: 200px;
+	width: 180px;
 	border:thistle 1px solid;
 	border-radius: 10px;
 	background-color: #eee;
+	transition: 1s;
+}
+.mycreats:hover{
+	background-color: #4ed2b8;
 }
 /* tùy chọn hiển thị */
 .tabmenu1{
 	position: fixed;
 	z-index: 1;
-	margin-left: 269px;
+	left: 200px;
 	margin-top: 0px;
 	height: 55px;
 	width: 600px;
 	text-align: center;
 	padding: 0px;
 	list-style: none;
-	font-family: 'Calistoga', cursive;
 }
 .tabmenu1 li{
 	display: inline-block;
@@ -262,11 +267,10 @@ header button{
 	transition: 1s;
 }
 .tabmenu1 li a:hover{
-	background-color: white;
+	background-color: #4ed2b8;
 }
 .setcons{
 	float: left;
-	font-size: 35px;
 	left: 0px;
 	margin-left: 0px;
 	margin-right: 3px;
@@ -278,10 +282,9 @@ header button{
 	text-decoration: none;
 }
 .setcons div{
-	font-family: 'Calistoga', cursive;
-	margin: 5px;
+	margin-top: 10px;
 	color: black;
-	font-size: 22px;
+	font-size: 16px;
 	height: 30px;
 	/* border: 1px gray solid; */
 	width: 140px;
@@ -309,6 +312,7 @@ header button{
 	border:thistle 1px solid;
 	border-radius: 10px;
 	margin-right: 3px;
+	margin-left: 5px;
 	color: black;
 	margin-bottom: 20px;
 }
@@ -697,7 +701,6 @@ header button{
 
 
 .bolocgt{
-	color: #000;
 	height: 40px;
 	width: 40px;
 	/* border-radius: 50%; */
@@ -705,11 +708,24 @@ header button{
 	position: fixed;
 	z-index: 1;
 	margin-left: 890px;
-	margin-top: 5px;
+	margin-top: 2px;
 	text-align: center;
 	padding: 0px;
 	list-style-type: none;
+	color: white;
 	
+}
+.sendsex{
+	position: absolute;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	outline: none;
+	border: hidden;
+	opacity: 0;
+}
+.posil .sendsex{
+	bottom: 15px;
 }
 .bolocgt:hover{
 	height: 200px;
@@ -718,14 +734,13 @@ header button{
 	display: block;
 }
 .allsex{
-
 	width: 40px;
 	height: 40px;
 	padding: 0px;
 	text-align: center;
 	background-color: #E64398;
 	border-radius: 50%;
-
+	color: white;
 }
 
 .sexisms2{

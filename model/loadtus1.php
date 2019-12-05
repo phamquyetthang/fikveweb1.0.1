@@ -1,8 +1,28 @@
 <?php
-
-$sqltus = "SELECT *, TIME_TO_SEC(TIMEDIFF(CURRENT_TIMESTAMP(), time)) AS now 
-        FROM `status` WHERE 1 ORDER BY idstatus DESC";
-$ket_qua_tus = $connect->query($sqltus);
+$sexvar=0;
+if(isset($_SESSION['sexvar'])){
+    $sexvar=$_SESSION['sexvar'];
+}
+if($sexvar!=0){
+    $sqlsptus="SELECT status.idstatus, status.idacc,status.multitus,status.img,status.sumlike,
+    status.sumcom, status.time,
+    TIME_TO_SEC(TIMEDIFF(CURRENT_TIMESTAMP(), time)) AS now, 
+    account.nicknam, account.avt, account.idsex,positionuser.valuekm AS far 
+    FROM status 
+    inner join account on status.idacc = account.idacc 
+    inner join positionuser on account.idposition = positionuser.idpos 
+    WHERE account.idsex=$sexvar ORDER BY `status`.`idstatus` DESC";
+    }else{
+        $sqlsptus="SELECT status.idstatus, status.idacc,status.multitus,status.img,status.sumlike,
+        status.sumcom, status.time,
+        TIME_TO_SEC(TIMEDIFF(CURRENT_TIMESTAMP(), time)) AS now, 
+        account.nicknam, account.avt, account.idsex,positionuser.valuekm AS far 
+        FROM status 
+        inner join account on status.idacc = account.idacc 
+        inner join positionuser on account.idposition = positionuser.idpos 
+        WHERE 1 ORDER BY `status`.`idstatus` DESC";
+    }
+$ket_qua_tus = $connect->query($sqlsptus);
 //Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
 if (!$ket_qua_tus) {
     die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
@@ -17,24 +37,11 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
     $tuscon=$rowtus['multitus'];
     $sumlike=$rowtus['sumlike'];
     $sumcom=$rowtus['sumcom'];
-    
+    $othername= $rowtus['nicknam'];
+    $otheravt= $rowtus['avt'];
+    $otherfar= $rowtus['far']+1;
     $idother=$rowtus['idacc'];
 
-    $other_user = "SELECT account.nicknam, account.avt, positionuser.valuekm AS far 
-                FROM account inner join positionuser on account.idposition = positionuser.idpos 
-                WHERE account.idacc=$idother";
-    $other_ones =$connect->query($other_user);
-    //Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
-    if (!$other_ones) {
-    die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
-    exit();
-    }
-    while ($rowother= $other_ones->fetch_array(MYSQLI_ASSOC)) {
-        // chuyển mảng về 1 phần tử
-        $othername= $rowother['nicknam'];
-        $otheravt= $rowother['avt'];
-        $otherfar= $rowother['far'];
-    }
     if($tustime <= 60){
         echo ('<div class="hop1s">
             <div class="headhs">

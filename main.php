@@ -7,6 +7,7 @@ if(empty($_SESSION['drid'])){
 <?php
 require_once ("controller/connect.php");
 require_once ("model/loadinfo.php");
+// require_once ("model/locgt.php");
 ?>
 <!doctype html>
 <html>
@@ -117,12 +118,16 @@ require_once ("model/loadinfo.php");
 		</ul>
 	</div>
 	<!-- Bộ lọc giới tính -->
+	<form action="model/locgt.php" method="post">
 	<ul class="bolocgt">
-		    <button class="fad fa-globe-asia cu-p icsip allsex"onclick="showBoloc()"></button>
-			<li><button class="fas fa-mars cu-p icsip sexisms2 posib"></button></li>
-			<li><button class="far fa-venus cu-p icsip sexisms2 posig"></button></li>
-			<li><button class="lgbt icsip cu-p sexisms2 posil"></button></li>
+		    <button class="fad fa-globe-asia cu-p icsip allsex">
+				<input type="submit" class="sendsex" name="allsex">
+			</button>
+			<li><button class="fas fa-mars cu-p icsip sexisms2 posib"><input type="submit" class="sendsex" name="man"></button></li>
+			<li><button class="far fa-venus cu-p icsip sexisms2 posig"><input type="submit" class="sendsex" name="girl"></button></li>
+			<li><button class="lgbt icsip cu-p sexisms2 posil"><input type="submit" class="sendsex" name="lgbt"></button></li>
 	</ul>
+	</form>
 	<!-- nội dung hiển thị -->
 	<div id="tab1" class="tabcontents">
 		<?php

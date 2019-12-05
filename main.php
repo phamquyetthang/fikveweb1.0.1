@@ -248,7 +248,7 @@ require_once ("model/loadinfo.php");
 				exit();
 			}
 			//Dùng vòng lặp while truy xuất các phần tử trong table
-			$rank22=1;
+			$rank2=1;
 			while ($row2= $ket_qua2->fetch_array(MYSQLI_ASSOC)) {
 				// chuyển mảng về 1 phần tử
 				$tavt2=$row2['avt'];

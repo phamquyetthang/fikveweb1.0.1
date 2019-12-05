@@ -66,7 +66,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
                     <input type="submit" value="" class="quantams ttt" name="addcase">
                     <div class="fad fa-star cu-p icsip quantams"></div>
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
                     <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
@@ -97,7 +97,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
                     <input type="submit" value="" class="quantams ttt" name="addcase">
                     <div class="fad fa-star cu-p icsip quantams"></div>
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
                     <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
@@ -128,7 +128,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
                     <input type="submit" value="" class="quantams ttt" name="addcase">
                     <div class="fad fa-star cu-p icsip quantams"></div>
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
                     <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
@@ -159,7 +159,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
                     <input type="submit" value="" class="quantams ttt" name="addcase">
                     <div class="fad fa-star cu-p icsip quantams"></div>
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
                     <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
@@ -191,7 +191,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
                     <input type="submit" value="" class="quantams ttt" name="addcase">
                     <div class="fad fa-star cu-p icsip quantams"></div>
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
                     <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');

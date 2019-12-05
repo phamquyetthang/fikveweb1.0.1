@@ -370,31 +370,8 @@ require_once ("model/loadinfo.php");
 		<div class="hisright">
 			<div class="far fa-times cu-p icsip exit e1" onclick="exitButton()"></div>
 			<?php
-				$sqltus = "SELECT * FROM `status` WHERE idacc='$ida' ORDER BY idstatus DESC";
-				$ket_qua_tus = $connect->query($sqltus);
-				//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
-				if (!$ket_qua_tus) {
-					die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
-					exit();
-				}
-				//Dùng vòng lặp while truy xuất các phần tử trong table
-				while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
-					// chuyển mảng về 1 phần tử
-					$tustime=$rowtus['time'];
-					$tusimg=$rowtus['img'];
-					$tuscon=$rowtus['multitus'];
-					$sumlike=$rowtus['sumlike'];
-					echo '<div class="hop1s myhis">'.$ida.$tustime.' // '.$tuscon.' // '.$tusimg.'</div><hr>';
-				}
-
+			require_once ("model/loadmytus.php");
 			?>
-			<div class="hop1s myhis">
-
-			</div>
-			<div class="hop1s myhis"></div>
-			<div class="hop1s myhis"></div>
-			<div class="hop1s myhis"></div>
-			<div class="hop1s myhis"></div>
 		</div>
 	</div>
 
@@ -637,7 +614,7 @@ $connect->close();
 ?>
 
 <!-- <script src="../resources/script/hjavascript.js" type="text/javascript"></script> -->
-<script src="vendors/script/jquery.min.js"></script>
+	<script src="vendors/script/jquery.min.js"></script>
 	<script src="vendors/script/jquery.form.js"></script>
 	<!-- <script src = "https://code.highcharts.com"></script> -->
 	<script src="resources/script/javascript.js" type="text/javascript"></script>

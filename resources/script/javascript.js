@@ -70,32 +70,7 @@ function openTabrank(tabsexs){
    document.getElementById(tabsexs).style.display="block";
 }
 
-
-// $.widget("custom.iconselectmenu", $.ui.selectmenu,{
-//    _renderItem: function(ul, item){
-//       //mỗi item là một <li>
-//       var li = $("<li>");
-//       //thêm class đánh dấu disable vào thẻ <li>
-//       if(item.disabled){
-//          li.addClass("ui-state-disabled");
-//       }
-//       //mỗi thẻ <li> chứa thẻ <div> làm nội dung
-//       var wrapper = $("<div>", {text:item.lable});
-//       //trong <div> có <span> làm icon
-//       $("<span>",{
-//          style:item.element.attr("data-style"),
-//          "class":"ui-icon"+ item.element.attr("data-class")
-//       }).appendTo(wrapper);
-//       //trả về 1 item sau render
-//       return li.append(wrapper).appendTo(ul);
-//    }
-// });
-
-// AJAX để up ảnh
-// var xhttp;
-// if (window.XMLHttpRequest){
-//    xhttp= new XMLHttpRequest();
-//    } else {
-//     //tao doi tuong ActiveXObject neu trinh duyet khong ho tro XMLHttpRequest
-//    xhttp= new ActiveXObject("Microsoft.XMLHTTP");
-// }
+document.getElementById("btncomment").onclick=function(){
+   document.getElementById("commenttus").style.display="block";
+   addManche(manche, 'manChanAll');
+};

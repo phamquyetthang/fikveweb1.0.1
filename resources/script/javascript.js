@@ -77,7 +77,7 @@ function openTabrank(tabsexs){
    document.getElementById(tabsexs).style.display="block";
 }
 
-document.getElementById("btncomment").onclick=function(){
-   document.getElementById("commenttus").style.display="block";
-   addManche(manche, 'manChanAll');
-};
+// document.getElementById("btncomment").onclick=function(){
+//    document.getElementById("commenttus").style.display="block";
+//    addManche(manche, 'manChanAll');
+// };

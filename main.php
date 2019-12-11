@@ -19,14 +19,9 @@ require_once ("model/loadinfo.php");
 	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pattaya&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
-	<!-- <script src="https://kit.fontawesome.com/aa97e6aad9.js" crossorigin="anonymous"></script> -->
 	<link href="vendors/icon/css/all.css" rel="stylesheet" type="text/css">
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-	<!-- jquery-ui -->
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-	<!-- <link rel="stylesheet" href="../vendors/css/bootstrap.css"> -->
-	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<link href="resources/style/styles.css" rel="stylesheet" type="text/css">
 	<link href="resources/style/colors.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="resources/style/hstyle.css" type="text/css">
@@ -135,9 +130,6 @@ require_once ("model/loadinfo.php");
 	</form>
 	<!-- nội dung hiển thị -->
 	<div id="tab1" class="tabcontents">
-		<?php
-			include ("model/loadtus1.php");
-		?>
 		<!-- <div class="hop2s">
 			<div class="headh2s">
 				<div class="avt posiavth2s"></div>
@@ -187,9 +179,6 @@ require_once ("model/loadinfo.php");
 	</div>
 
 	<div id="tab3" class="tabcontents" style="display: none;">
-	<?php
-	 include ("model/loadtus2.php");
-	?>
 	</div>
 
 
@@ -211,100 +200,12 @@ require_once ("model/loadinfo.php");
 
 	</div>
 	<div id="manche"></div>
-	<div id="tabrankboy" class="rankdisplay">
-		<?php
-			$sql1 = "SELECT * FROM `account` WHERE idsex='1' ORDER BY tuongtac DESC LIMIT 10";
-			$ket_qua1 = $connect->query($sql1);
-			//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
-			if (!$ket_qua1) {
-				die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
-				exit();
-			}
-			//Dùng vòng lặp while truy xuất các phần tử trong table
-			$rank1=1;
-			while ($row1= $ket_qua1->fetch_array(MYSQLI_ASSOC)) {
-				// chuyển mảng về 1 phần tử
-				$tavt1=$row1['avt'];
-				$tnick1=$row1['nicknam'];
-				$tslo1=$row1['slogan'];
-				$tpoint1=$row1['tuongtac'];
-				if($rank1<10){
-					$rank12="0".$rank1;
-				}else{ $rank12=$rank1; }
-				echo    '<div class="ranks cu-p">
-						<div class="stts">'.$rank12.'</div>
-						<div class="avttrender"><img src="'.$tavt1.'" alt="avt ai đó"></div>
-						<div class="nametrender">'.$tnick1.'</div>
-						<div class="scoretrender">'.$tpoint1.'</div>
-						<div class="slogantrender">'.$tslo1.'</div>
-						</div>';
-				$rank1++;
-			}
-		?>
+	<div id="tabrankboy" class="rankdisplay scroll">
 	</div>
 
-	<div id="tabrankgirl" class="rankdisplay" style="display: none;">
-		<?php
-			$sql2 = "SELECT * FROM `account` WHERE idsex='2' ORDER BY tuongtac DESC LIMIT 10";
-			$ket_qua2 = $connect->query($sql2);
-			//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
-			if (!$ket_qua2) {
-				die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
-				exit();
-			}
-			//Dùng vòng lặp while truy xuất các phần tử trong table
-			$rank2=1;
-			while ($row2= $ket_qua2->fetch_array(MYSQLI_ASSOC)) {
-				// chuyển mảng về 1 phần tử
-				$tavt2=$row2['avt'];
-				$tnick2=$row2['nicknam'];
-				$tslo2=$row2['slogan'];
-				$tpoint2=$row2['tuongtac'];
-				if($rank2<10){
-					$rank22="0".$rank2;
-				}else{ $rank22=$rank2; }
-				echo    '<div class="ranks cu-p">
-						<div class="stts">'.$rank22.'</div>
-						<div class="avttrender"><img src="'.$tavt2.'" alt="avt ai đó"></div>
-						<div class="nametrender">'.$tnick2.'</div>
-						<div class="scoretrender">'.$tpoint2.'</div>
-						<div class="slogantrender">'.$tslo2.'</div>
-						</div>';
-				$rank2++;
-			}
-		?>
+	<div id="tabrankgirl" class="rankdisplay scroll" style="display: none;">
 	</div>
-	<div id="tabranklgbt" class="rankdisplay"  style="display: none;">
-		<?php
-			$sql3 = "SELECT * FROM `account` WHERE idsex='3' ORDER BY tuongtac DESC LIMIT 10";
-			$ket_qua3 = $connect->query($sql3);
-			//Nếu kết quả kết nối không được thì xuất báo lỗi và thoát
-			if (!$ket_qua3) {
-				die("Không thể thực hiện câu lệnh SQL: " . $connect->connect_error);
-				exit();
-			}
-			//Dùng vòng lặp while truy xuất các phần tử trong table
-			$rank3=1;
-			while ($row3= $ket_qua3->fetch_array(MYSQLI_ASSOC)) {
-				// chuyển mảng về 1 phần tử
-				$tavt3=$row3['avt'];
-				$tnick3=$row3['nicknam'];
-				$tslo3=$row3['slogan'];
-				$tpoint3=$row3['tuongtac'];
-				if($rank3<10){
-					$rank32="0".$rank3;
-				}else{ $rank32=$rank3; }
-				echo    '<div class="ranks cu-p">
-						<div class="stts">'.$rank32.'</div>
-						<div class="avttrender"><img src="'.$tavt3.'" alt="avt ai đó"></div>
-						<div class="nametrender">'.$tnick3.'</div>
-						<div class="scoretrender">'.$tpoint3.'</div>
-						<div class="slogantrender">'.$tslo3.'</div>
-						</div>';
-				$rank3++;
-			}
-		?>
-
+	<div id="tabranklgbt" class="rankdisplay scroll"  style="display: none;">
 	</div>
 </div>
 	
@@ -374,15 +275,15 @@ require_once ("model/loadinfo.php");
 		</div>
 		<div class="hisright">
 			<div class="far fa-times cu-p icsip exit e1" onclick="exitButton()"></div>
-			<?php
-			require_once ("model/loadmytus.php");
-			?>
+			<div id="showmytus">
+			</div>
 		</div>
 	</div>
 
 
 	
 <!-- form đăng bài -->
+<div id="showornot">
 <div class="createtus" id="createtus">
 	<div class="headhs whead">
 		<div class="avt posiavths"></div>
@@ -391,23 +292,23 @@ require_once ("model/loadinfo.php");
 				echo $mynick;
 				?>
 		</div>
-		<button class="far fa-times cu-p icsip exit" onclick="closeAny('createtus')"></button>
+		<button class="far fa-times cu-p icsip exit" id="closecreatus"></button>
 	</div>
 	<div class="mytus">
 		<div id="mytus"></div>
-		
 	</div>
+	
 	<button class="fas fa-backspace cu-p icsip dele" onclick="clickDele(this)"></button>
-	<div class="okok" id="submytus1">Ok</div>
-
-	<form id="imageform" method="post" enctype="multipart/form-data" action='model/doajax.php'>
-		<div class="myimage" id="preview"></div>
-		<div class="customupanh">
-			<span class="fakeicon">+</span>
-			<p class="themanh">Thêm ảnh</p>
-			<input type="file" name="upanh" id="upanh" class="upanh">
-		</div>
-	</form>
+	<div class="myimage" id="preview"><img id="output"/></div>
+	<div class="customupanh">
+		<span class="fakeicon">+</span>
+		<p class="themanh">Thêm ảnh</p>
+		<form method="post">
+		<input type="hidden" name="status" id="realtus" value="">
+		<input type="file" name="upanh" id="upanh" class="upanh" accept="image/*" onchange="loadFile(event)">
+		</form>
+	</div>
+	
 	<div class="libralytus">
 		<div class="buttontus" onclick="clickButtontus(this)">
 			Thiếu một nửa tôi đi tìm một nửa
@@ -453,31 +354,21 @@ require_once ("model/loadinfo.php");
 		</div>
 		
 	</div>
-	<form method="post" class="nocansee" action="model/creatus.php">
-		<input type="text" name="myftus" id="myftus" value="">
-		<input type="text" name="myfimg" id="myfimg" value="">
-		<input type="submit" value="Đăng" class="danganhlen cu-p" id="submytus" name="submytus">
-		<!-- onclick="closeAny('createtus')" -->
-	</form>
-	
-	<script>
-		document.getElementById('submytus1').onclick=function(){
-			var sta = setTimeout(function(){
-				var myftus= document.getElementById('mytus').innerHTML;//lấy text ở #mytus
-				var myfimg = document.querySelector(".preview").src;//lấy link ảnh ở .preview
-				document.getElementById('myftus').value=myftus;//gán text vào #myftus
-				document.getElementById('myfimg').value=myfimg;//gán link dạng text vào #myfimg
-				var k=document.getElementById('myftus').value;
-				console.log(myftus);
-				console.log(k);
-				console.log(myfimg);
-			}, 10);
-		}
-	</script>
+	<button class="danganhlen cu-p" id="submytus">Đăng</button>
 	
 </div>
 </div>
-
+</div>
+<script>
+	var loadFile = function(event) {
+		var output = document.getElementById('output');
+		output.src = URL.createObjectURL(event.target.files[0]);
+	};
+	document.getElementById("closecreatus").onclick=function(){
+		document.getElementById("createtus").style.display="none";
+		manche.setAttribute('class', '');
+	};
+</script>
 <!-- tabs tin nhắn -->
 <div class="mymess" id="mymess">
 	<div class="leftmess">
@@ -611,10 +502,12 @@ $connect->close();
 ?>
 
 <!-- <script src="../resources/script/hjavascript.js" type="text/javascript"></script> -->
-	<script src="vendors/script/jquery.min.js"></script>
-	<script src="vendors/script/jquery.form.js"></script>
+	<!-- <script src="vendors/script/jquery.min.js"></script>
+	<script src="vendors/script/jquery.form.js"></script> -->
 	<!-- <script src = "https://code.highcharts.com"></script> -->
 	<script src="resources/script/javascript.js" type="text/javascript"></script>
 	<script src="resources/script/hjavascript.js" type="text/javascript"></script>
+	<script src="ajaxshow/ajaxshow.js"></script>
+	<script src="ajaxshow/ajaxpost.js"></script>
 </body>
 </html>

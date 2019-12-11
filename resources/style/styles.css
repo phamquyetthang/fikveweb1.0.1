@@ -581,7 +581,8 @@ header button{
 
 }
 .rankdisplay{
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 .tabmenu2:hover{
 	right: 0px;
@@ -779,3 +780,20 @@ header button{
 /* #fake{
 	margin-top: 2000px;
 } */
+
+
+.scroll::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+.scroll::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+    background-color: gray;
+}
+.scroll::-webkit-scrollbar-track {
+    background-color: #eee;
+} 
+.scroll{
+    scrollbar-color: gray #eee;
+    scrollbar-width: thin;
+}

@@ -177,6 +177,18 @@ function getV(btn){
             $(".blcosan").html(result);
         }
     });
+    setInterval(function(){
+    $.ajax({
+        url : "ajaxshow/showcmt.php",
+        type : "post",
+        data : { method: "posttus",
+            v:v,
+        },
+        success : function (result){
+            $(".blcosan").html(result);
+        }
+    });
+    }, 1000);
 };
 $(".binhluans").click(
     function openCmt(){

@@ -15,6 +15,6 @@ while ($rowcmt= $showtus->fetch_array(MYSQLI_ASSOC)) {
     $cmt= $rowcmt['multilcoment'];
     // $idtus =$rowcmt['idtus'];
 
-    echo("$idacc||$cmt<hr>");
+    echo('<div class="cmtcosan"> '.$idacc.'||'.$cmt.' tét tét tét 123 3624 check</div>');
 }
 ?>

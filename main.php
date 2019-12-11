@@ -152,30 +152,66 @@ require_once ("model/loadinfo.php");
 		</div> -->
 	</div>
 	<div id="tab2" class="tabcontents" style="display: none;">
-		<?php
-			for ($i = 0; $i < 20; $i++){
-				echo '<div class="hop1s">
-				<div class="headhs">
-					<div class="avt posiavths"></div>
-					<div id="nickname"></div>
-					<div id="timeoftus"></div>
-					<div id="khoangcach"></div>
-					<button class="far fa-times cu-p icsip banthems"></button>
-				</div>
-				<div class="statushs"></div>
-				<div class="contenths  ">
-					<button class="fal fa-info-circle cu-p report"></button>
-				</div>
-				<div class="endhs">
-						<button class="fad fa-heart cu-p icsip thatims"></button>
-						<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
-						<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
-						<button class="fad fa-star cu-p icsip quantams"></button>
+	<?php
+		for($i=0;$i<=10;$i++){
+			echo('
+			<div class="hop1s">
+			<div class="headhs">
+				<div class="avt posiavths"></div>
+				<div id="nickname"></div>
+				<div id="timeoftus"></div>
+				<div id="khoangcach"></div>
+				<button class="far fa-times cu-p icsip banthems"></button>
+			</div>
+			<div class="statushs"></div>
+			<div class="contenths  ">
+				<button class="fal fa-info-circle cu-p report"></button>
+			</div>
+			<div class="endhs">
+					<form method="post">
+						<input type="hidden" name="anyid" value="anyid" id="anyid">
+						<input type="hidden" name="heartp" id="heartp1" value="">
+						<input type="hidden" name="comp" id="comp1" value="">
+						<input type="hidden" name="carep" ip="carep1" value="">
+					</form>
+					<button class="fad fa-heart cu-p icsip thatims"></button>
+					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
+					<button class="fad fa-star cu-p icsip quantams"></button>
+	
+			</div>
+		</div>
+		<div class="hop1s">
+			<div class="headhs">
+				<div class="avt posiavths"></div>
+				<div id="nickname"></div>
+				<div id="timeoftus"></div>
+				<div id="khoangcach"></div>
+				<button class="far fa-times cu-p icsip banthems"></button>
+			</div>
+			<div class="statushs"></div>
+			<div class="contenths  ">
+				<button class="fal fa-info-circle cu-p report"></button>
+			</div>
+			<div class="endhs">
+					<form method="post">
+						<input type="hidden" name="anyid" value="anyid" id="anyid">
+						<input type="hidden" name="heartp" id="heartp1" value="">
+						<input type="hidden" name="comp" id="comp1" value="">
+						<input type="hidden" name="carep" ip="carep1" value="">
+					</form>
+					<button class="fad fa-heart cu-p icsip thatims"></button>
+					<button class="fas fa-comment-alt-edit cu-p icsip binhluans"></button>
+					<button class="fas fa-comment-plus cu-p icsip chonnhans"></button>
+					<button class="fad fa-star cu-p icsip quantams"></button>
+	
+			</div>
+		</div>
 		
-				</div>
-			</div>';
-			}
-		?>
+			');
+		}
+			
+			?>
 	</div>
 
 	<div id="tab3" class="tabcontents" style="display: none;">
@@ -286,7 +322,11 @@ require_once ("model/loadinfo.php");
 <div id="showornot">
 <div class="createtus" id="createtus">
 	<div class="headhs whead">
-		<div class="avt posiavths"></div>
+		<div class="avt posiavths">
+			<?php
+				echo '<img src="'.$myavt.'" alt="avt của cậu đó">';
+			?>
+		</div>
 		<div id="nickname">
 				<?php
 				echo $mynick;
@@ -495,7 +535,7 @@ abcsd
 			Cơn say theo nửa đời
 		</div>
 	</div>
-	<button class="danganhlen cu-p" onclick="closeAny('commenttus')">Đăng</button>
+	<button class="danganhlen cu-p">Đăng</button>
 </div>
 <?php
 $connect->close();

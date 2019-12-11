@@ -44,7 +44,7 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
     $otheravt= $rowtus['avt'];
     $otherfar= $rowtus['far']+1;
     $idother=$rowtus['idacc'];
-
+    $idtus=$rowtus['idstatus'];
     if($tustime <= 60){
         echo ('<div class="hop1s">
             <div class="headhs">
@@ -61,16 +61,14 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
             </div>
             <div class="endhs">
                 <form method="post">
-                    <input type="submit" value="" class="thatims ttt" name="addlike">
-                    <div class="fad fa-heart cu-p icsip thatims"></div>
-                    <div class="endpl">'.$sumlike.'</div>
-                    <input type="submit" value="" class="chonnhans ttt" name="addmess">
-                    <div class="fas fa-comment-plus cu-p icsip chonnhans"></div>
-                    <input type="submit" value="" class="quantams ttt" name="addcase">
-                    <div class="fad fa-star cu-p icsip quantams"></div>
+                <input type="hidden" name="thatid" class="thatid" value="'.$idtus.'">
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
-                    <div class="endpc">'.$sumcom.'</div>
+                <button class="fad fa-heart cu-p icsip thatims" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpl">'.$sumlike.'</div>
+                <button class="fas fa-comment-plus cu-p icsip chonnhans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fad fa-star cu-p icsip quantams" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fas fa-comment-alt-edit cu-p icsip binhluans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
         // echo $tustime.' s ago';
@@ -92,16 +90,14 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
             </div>
             <div class="endhs">
                 <form method="post">
-                    <input type="submit" value="" class="thatims ttt" name="addlike">
-                    <div class="fad fa-heart cu-p icsip thatims"></div>
-                    <div class="endpl">'.$sumlike.'</div>
-                    <input type="submit" value="" class="chonnhans ttt" name="addmess">
-                    <div class="fas fa-comment-plus cu-p icsip chonnhans"></div>
-                    <input type="submit" value="" class="quantams ttt" name="addcase">
-                    <div class="fad fa-star cu-p icsip quantams"></div>
+                <input type="hidden" name="thatid" class="thatid" value="'.$idtus.'">
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
-                    <div class="endpc">'.$sumcom.'</div>
+                <button class="fad fa-heart cu-p icsip thatims" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpl">'.$sumlike.'</div>
+                <button class="fas fa-comment-plus cu-p icsip chonnhans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fad fa-star cu-p icsip quantams" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fas fa-comment-alt-edit cu-p icsip binhluans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
         // echo (int)$tusmin.' m ago';
@@ -123,16 +119,14 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
             </div>
             <div class="endhs">
                 <form method="post">
-                    <input type="submit" value="" class="thatims ttt" name="addlike">
-                    <div class="fad fa-heart cu-p icsip thatims"></div>
-                    <div class="endpl">'.$sumlike.'</div>
-                    <input type="submit" value="" class="chonnhans ttt" name="addmess">
-                    <div class="fas fa-comment-plus cu-p icsip chonnhans"></div>
-                    <input type="submit" value="" class="quantams ttt" name="addcase">
-                    <div class="fad fa-star cu-p icsip quantams"></div>
+                <input type="hidden" name="thatid" class="thatid" value="'.$idtus.'">
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
-                    <div class="endpc">'.$sumcom.'</div>
+                <button class="fad fa-heart cu-p icsip thatims" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpl">'.$sumlike.'</div>
+                <button class="fas fa-comment-plus cu-p icsip chonnhans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fad fa-star cu-p icsip quantams" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fas fa-comment-alt-edit cu-p icsip binhluans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
         // echo (int)$tushour.' h ago';
@@ -154,21 +148,35 @@ while ($rowtus= $ket_qua_tus->fetch_array(MYSQLI_ASSOC)) {
             </div>
             <div class="endhs">
                 <form method="post">
-                    <input type="submit" value="" class="thatims ttt" name="addlike">
-                    <div class="fad fa-heart cu-p icsip thatims"></div>
-                    <div class="endpl">'.$sumlike.'</div>
-                    <input type="submit" value="" class="chonnhans ttt" name="addmess">
-                    <div class="fas fa-comment-plus cu-p icsip chonnhans"></div>
-                    <input type="submit" value="" class="quantams ttt" name="addcase">
-                    <div class="fad fa-star cu-p icsip quantams"></div>
+                <input type="hidden" name="thatid" class="thatid" value="'.$idtus.'">
                 </form>
-                    <button class="fas fa-comment-alt-edit cu-p icsip binhluans" id="btncomment"></button>
-                    <div class="endpc">'.$sumcom.'</div>
+                <button class="fad fa-heart cu-p icsip thatims" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpl">'.$sumlike.'</div>
+                <button class="fas fa-comment-plus cu-p icsip chonnhans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fad fa-star cu-p icsip quantams" value="'.$idtus.'"onclick="getV(this)"></button>
+                <button class="fas fa-comment-alt-edit cu-p icsip binhluans" value="'.$idtus.'"onclick="getV(this)"></button>
+                <div class="endpc">'.$sumcom.'</div>
             </div>
             </div>');
         // echo (int)$tushour.' d ago';
     }
 }
+echo('	<script>
+function getV(btn){
+    var v= $(btn).val();
+    console.log(v);
+};
+
+$(".binhluans").click(
+    function openCmt(){
+        document.getElementById("commenttus").style.display="block";
+        manche.setAttribute("class", "manChanAll");
+        console.log("3528");
+    }
+
+);
+
+</script>');
 //Đóng kết nối database tintuc
 // $connect->close();  
 ?>

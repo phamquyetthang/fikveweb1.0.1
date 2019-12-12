@@ -66,21 +66,21 @@ loadtus.loadmytus =function(){
     });
     console.log("load my tus");
 }
-loadtus.interval = setInterval(loadtus.loadTus_soon, 5000);
+loadtus.interval = setInterval(loadtus.loadTus_soon, 1000);
 loadtus.loadTus_soon();
 
-loadtus.interval = setInterval(loadtus.loadTus_trend, 5000);
+loadtus.interval = setInterval(loadtus.loadTus_trend, 1000);
 loadtus.loadTus_trend();
 
-loadtus.interval = setInterval(loadtus.loadrankboy, 5000);
+loadtus.interval = setInterval(loadtus.loadrankboy, 1000);
 loadtus.loadrankboy();
-loadtus.interval = setInterval(loadtus.loadrankgirl, 5000);
+loadtus.interval = setInterval(loadtus.loadrankgirl, 1000);
 loadtus.loadrankgirl();
 
 
-loadtus.interval = setInterval(loadtus.loadranklgbt, 5000);
+loadtus.interval = setInterval(loadtus.loadranklgbt, 1000);
 loadtus.loadranklgbt();
 
 
-loadtus.interval = setInterval(loadtus.loadmytus, 5000);
+loadtus.interval = setInterval(loadtus.loadmytus, 1000);
 loadtus.loadmytus();

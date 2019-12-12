@@ -252,8 +252,8 @@ require_once ("model/loadinfo.php");
 			<div class="avttop">
 				<div class="doiavt">
 					<form action="" method="post">
-						<input type="button" value="Thay đổi" name="btndoiavt" class="cu-p"></br>
-						<input type="button" value="Xem ảnh" name="btnxemavt" class="cu-p">
+						<input type="button" value="Thay đổi" name="btndoiavt" class="cu-p" onclick="openAny('doiavt')"></br>
+						<input type="button" value="Xem ảnh" name="btnxemavt" class="cu-p" onclick="openAny('xemavt')">
 					</form>
 				</div>
 				<?php					
@@ -488,15 +488,21 @@ abcsd
 <!-- tabs binh luan -->
 <div class="commenttus" id="commenttus">
 	<div class="headhs cmthead">
-		<div class="avt posiavths"></div>
-		<div id="nickname">Phúc Vinh</div>
+		<div class="avt posiavths"><?php
+				echo '<img src="'.$myavt.'" alt="avt của cậu đó">';
+			?></div>
+		<div id="nickname"><?php echo $mynick; ?></div>
 		<div id="timeoftus"></div>
 		<div id="khoangcach"></div>
 		<button class="far fa-times cu-p icsip exit" onclick="closeAny('commenttus')"></button>
 	</div>
 	<!-- binh luan cua nguoi khac  -->
 	<div class="blcosan">
-		<div class="cmtcosan"></div>
+		<div class="cmtcosan">
+			<div class="avtthey"></div>
+			<p class="namethey"></p>
+			<p class="cmtthey"></p>
+		</div>
 		<div class="cmtcosan"></div>
 		<div class="cmtcosan"></div>
 		<div class="cmtcosan"></div>
@@ -534,9 +540,63 @@ abcsd
 		<div class="buttontus" onclick="clickCmt(this)">
 			Cơn say theo nửa đời
 		</div>
+		<input type="hidden" name="mycmts" id="mycmts">
 	</div>
-	<button class="danganhlen cu-p">Đăng</button>
+	<button class="danganhlen cu-p" id="postcmt">Đăng</button>
+	<script>
+		$("#postcmt").click(
+			function postCmt(){
+				var mycmt= $("#mycmts").val();
+				var thisid= $("#thistusid").val();
+				// var thisoid=$("#thisoid").val();
+				console.log(thisid);
+				$.ajax({
+					url: "ajaxshow/postcmt.php",
+					type : "post",
+					data : { method: "postcmt",
+						mycmt:mycmt,
+						thisid:thisid,
+						// thisoid:thisoid,
+					},
+					success : function (result){
+						// var thisoid=$("#thisoid").val();
+						$.ajax({
+							url : "ajaxshow/showcmt.php",
+							type : "post",
+							data : { method: "showcmt",
+								v:thisid,
+								// at:thisoid,
+							},
+							success : function (result){
+								$(".blcosan").html(result);
+							}
+						});
+						$('#mycmt').html(' ');
+						str_mycmt='';
+					}
+				});
+			   
+			}
+		);
+	</script>
 </div>
+<div id="xemavt">
+    <button class="exit" onclick="closeAny('xemavt')">x</button>
+    <?php
+    echo '<img src="'.$myavt.'" alt="avt của cậu đó">';
+    ?>
+    </div>
+<div id="doiavt">
+        
+        <button class="exit" onclick="closeAny('doiavt')">x</button>
+        <form action="model/doiavt.php" method="post">
+            <input type="file" name="doiavt" id="nguonavt">
+            <input type="submit" value="Thay đổi" id="upanh" name="upanh">
+            <!-- <button id="upanh">Thay đổi</button> -->
+        </form>
+        <!-- <button id="upanh">Thay đổi</button> -->
+       
+    </div>
 <?php
 $connect->close();
 ?>

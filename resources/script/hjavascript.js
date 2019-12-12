@@ -28,14 +28,17 @@ function clickDele(del){
 }
 
 var mycmt = document.getElementById('mycmt');
+var realmycmt =document.getElementById('mycmts');
 var str_mycmt=" ";
 function clickCmt(obj){
     var concmt = obj.innerHTML;//lấy nội dung từ các button
     str_mycmt = str_mycmt + concmt;
     mycmt.innerHTML = str_mycmt;
+    realmycmt.value=mycmt.innerHTML;
 }
 function delecmt(del){
     var concmt = del.innerHTML;
     str_mycmt = concmt;
     mycmt.innerHTML = str_mycmt;
+    realmycmt.value=mycmt.innerHTML;
 }

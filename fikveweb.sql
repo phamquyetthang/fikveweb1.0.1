@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 05, 2019 lúc 08:40 AM
+-- Thời gian đã tạo: Th12 12, 2019 lúc 08:53 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -49,9 +49,9 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`idacc`, `email`, `accname`, `password`, `nicknam`, `avt`, `idsex`, `idposition`, `slogan`, `moreinfo`, `age`, `tuongtac`, `money`) VALUES
-(1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'resources/img/vic1.jpg', 1, 1, 'sdasff', 'sdffsdfs', 18, 1000, 100),
+(1, 'quyet@gmail.com', 'Phạm Quyết Thắng', '123132', 'Hoàng tử', 'resources/img/vic1.jpg', 1, 1, 'sdasff', 'sdffsdfs', 18, 1001, 100),
 (2, 'quyetthang@gmail.com', 'phuc vinh', '123132', 'phucvinh', 'resources/img/dp.jpg\r\n', 1, 1, 'sdasff', 'sdffsdfs', 20, 980, 100),
-(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'resources/img/thuy1.jpg\r\n', 2, 4, 'cfghgbn', 'dfghhjj', 18, 600, 100),
+(3, 'hong@gmail.com', 'hong', '1234567', 'hong', 'resources/img/thuy1.jpg\r\n', 2, 4, 'cfghgbn', 'dfghhjj', 18, 601, 100),
 (7, 'phuc@gmail.com', 'Phúc', '345678', 'Không Phải Phúc', 'resources/img/phuc1.jpg\r\n', 1, 6, NULL, NULL, 18, 880, 100),
 (8, 'son@gmail.com', 'Đặng Anh Sơn', '543212', 'Sơn Thần', 'resources/img/son2.jpg\r\n', 1, 12, NULL, NULL, 17, 600, 100),
 (9, 'thuong@gmail.com', 'Tạ Quang Thưởng', '987654', 'Kỳ Quan Thiên Nhiên', 'resources/img/thuong1.jpg', 3, 18, NULL, NULL, 19, 780, 100),
@@ -73,9 +73,10 @@ INSERT INTO `account` (`idacc`, `email`, `accname`, `password`, `nicknam`, `avt`
 (12238, 'longngoc@gmail.com', 'long ngọc', '123456', '', 'resources/img/dp.jpg', 3, 6, NULL, NULL, 22, 0, 100),
 (12239, 'longngoc@gmail.com', 'long ngọc', '123456', 'Anyone', 'resources/img/dp.jpg', 3, 6, NULL, NULL, 22, 0, 100),
 (12240, 'hongngoc@gmail.com', 'Hồng Ngọc', '345623', '', 'resources/img/dp.jpg', 2, 5, NULL, NULL, 24, 0, 100),
-(12241, 'quyetthang.phucchi@gmail.com', 'Nguyễn Phúc Vinh', 'anhyeuem', 'Phúc Chi', 'resources/img/vic1.jpg', 1, 6, NULL, NULL, 22, 0, 100),
+(12241, 'quyetthang.phucchi@gmail.com', 'Nguyễn Phúc Vinh', 'anhyeuem', 'Phúc Chi', 'resources/img/vic1.jpg', 1, 6, NULL, NULL, 22, 2, 100),
 (12242, 'nhumay@gmail.com', 'Như Mây', '987654', '', 'resources/img/dp.jpg', 2, 19, NULL, NULL, 22, 0, 100),
-(12243, 'thanhthanh@gmail.com', 'Ngô Thị Thanh', '852963', 'Anyone', 'resources/img/dp.jpg', 2, 19, NULL, NULL, 22, 0, 100);
+(12243, 'thanhthanh@gmail.com', 'Ngô Thị Thanh', '852963', 'Anyone', 'resources/img/dp.jpg', 2, 19, NULL, NULL, 22, 0, 100),
+(12244, 'hongha@gmail.com', 'Hông Hà', '123456789', 'Anyone', 'resources/img/dp.jpg', 1, 6, NULL, NULL, 15, 2, 100);
 
 -- --------------------------------------------------------
 
@@ -84,13 +85,55 @@ INSERT INTO `account` (`idacc`, `email`, `accname`, `password`, `nicknam`, `avt`
 --
 
 CREATE TABLE `activeone` (
-  `idactive` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `idacc` int(8) NOT NULL,
-  `multilcoment` text NOT NULL,
-  `liked` tinyint(1) NOT NULL,
-  `starchoose` tinyint(1) NOT NULL,
+  `multilcoment` text DEFAULT NULL,
+  `liked` tinyint(1) DEFAULT 0,
   `idtus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `activeone`
+--
+
+INSERT INTO `activeone` (`id`, `idacc`, `multilcoment`, `liked`, `idtus`) VALUES
+(1, 2, 'Chào người đẹp', 1, 65),
+(2, 3, 'Hú hú', 1, 65),
+(3, 4, 'Xin những bối rối này cứ thế lên ngôi', 1, 65),
+(4, 8, 'Test cmt , ok ok ok', 1, 66),
+(5, 3, 'Test again , check, check, check', 0, 66),
+(6, 15, ' \n			Em đẹp quá\n		', 0, 66),
+(7, 15, ' \n			Em đẹp quá\n		', 0, 66),
+(8, 15, ' \n			Em đẹp quá\n		\n			Nhà em ở đâu thế\n		', 0, 66),
+(9, 15, ' \n			Uống nhầm một ánh mắt\n		\n			Cơn say theo nửa đời\n		', 0, 66),
+(10, 15, ' \n			Cho anh làm quen với bé ơi\n		', 0, 54),
+(11, 15, ' \n			Cho anh làm quen với bé ơi\n		\n			Nhà em ở đâu thế\n		', 0, 55),
+(12, 15, ' \n			Cho anh làm quen với bé ơi\n		', 0, 56),
+(13, 15, ' \n			Người trao có nửa nụ cười\n		\n			Mà anh mất cả một đời để quên\n		', 0, 56),
+(14, 15, ' \n			Em đẹp quá\n		', 0, 54),
+(15, 15, ' \n			Cho anh làm quen với bé ơi\n		', 0, 44),
+(16, 15, '\n			Nhà em ở đâu thế\n		', 0, 10),
+(17, 15, ' \n			Uống nhầm một ánh mắt\n		\n			Cơn say theo nửa đời\n		', 0, 5),
+(18, 15, '\n			Cơn say theo nửa đời\n		\n			Cho anh làm quen với bé ơi\n		', 0, 5),
+(19, 12241, ' \n			Người trao có nửa nụ cười\n		', 1, 66),
+(20, 12241, ' \n			Cho anh làm quen với bé ơi\n		', 0, 59),
+(21, 8, NULL, 1, 0),
+(22, 8, NULL, 1, 65),
+(23, 12241, ' \n			Nhà em ở đâu thế\n		', 1, 33),
+(24, 12241, ' \n			Nhà em ở đâu thế\n		', 0, 52),
+(25, 12241, ' \n			Em đẹp quá\n		', 0, 10),
+(26, 12241, ' \n			Em đẹp quá\n		', 1, 57),
+(27, 12241, ' \n			Nhà em ở đâu thế\n		', 0, 32),
+(28, 12241, ' \n			Em đẹp quá\n		', 0, 0),
+(29, 12241, ' \n			Nhà em ở đâu thế\n		', 0, 33),
+(30, 12241, ' \n			Em đẹp quá\n		', 0, 0),
+(31, 12241, ' \n			Cho anh làm quen với bé ơi\n		', 0, 44),
+(32, 12241, ' \n			Em đẹp quá\n		', 0, 54),
+(33, 12241, ' \n			Em đẹp quá\n		', 0, 10),
+(34, 12241, '\n			Em đẹp quá\n		', 0, 10),
+(35, 12241, ' \n			Nhà em ở đâu thế\n		', 0, 10),
+(36, 12241, ' \n			Em đẹp quá\n		', 0, 0),
+(37, 12244, ' \n			Em đẹp quá\n		', 1, 66);
 
 -- --------------------------------------------------------
 
@@ -153,6 +196,20 @@ INSERT INTO `positionuser` (`idpos`, `posi`, `valuekm`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `quanhe`
+--
+
+CREATE TABLE `quanhe` (
+  `id` int(11) NOT NULL,
+  `idmy` int(11) NOT NULL,
+  `idtheir` int(11) NOT NULL,
+  `care` int(11) NOT NULL DEFAULT 0,
+  `mess` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `sexiusm`
 --
 
@@ -191,20 +248,24 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`idstatus`, `idacc`, `multitus`, `time`, `img`, `sumlike`, `sumcom`) VALUES
-(3, 12241, 'Từ ấy trong tôi bừng nắng hạ', '2019-12-02 09:24:42', 'resources/img/vic1.jpg', 100, 101),
+(3, 12241, 'Từ ấy trong tôi bừng nắng hạ', '2019-12-02 09:24:42', 'resources/img/vic1.jpg', 102, 3),
 (4, 12241, 'test time', '2019-12-02 09:27:56', 'resources/img/thuy1.jpg', 201, 101),
 (5, 12241, 'anh đẹp trai', '2019-12-03 11:08:30', 'http://localhost/dalab/vic1.jpg', 10, 8),
 (7, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Em ngược đường ngược nắng để yêu anh		', '2019-12-03 11:09:55', 'http://localhost/fikveweb1.0.1/model/uploads/1575370713hluan.png', 43, 21),
-(10, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa		', '2019-12-03 11:11:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575371482led_Diagram.png', 1232, 1212),
+(10, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa		', '2019-12-03 11:11:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575371482led_Diagram.png', 1232, 1215),
 (32, 12241, ' 			Các vợ ơi		', '2019-12-03 15:03:14', 'http://localhost/fikveweb1.0.1/model/uploads/15753730701.jpg', 74, 12),
 (33, 1, ' 			Một là anh đang nói dối					Hai là anh đang nói dối nhiều lần		', '2019-12-03 15:05:50', 'http://localhost/fikveweb1.0.1/model/uploads/1575385534.jpg', 121, 2),
 (44, 12243, ' 			Các chồng ơi		', '2019-12-04 03:42:49', 'http://localhost/fikveweb1.0.1/model/uploads/1575430070.jpg', 980, 4),
 (52, 12241, ' 			Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Nước mắt đã rơi, trò chơi kết thúc		', '2019-12-04 12:07:08', 'http://localhost/fikveweb1.0.1/model/uploads/1575461215bb474834fff9739b48923ad10e5.png', 0, 0),
-(54, 3, 'em đẹp em có quyền', '2019-12-04 14:02:50', 'resources/img/thanh1.jpg', 123, 32),
+(54, 3, 'em đẹp em có quyền', '2019-12-04 14:02:50', 'resources/img/thanh1.jpg', 125, 33),
 (55, 10, ' 			Bên em nắng rồi bên anh thì vẫn mưa		', '2019-12-04 14:05:22', 'http://localhost/fikveweb1.0.1/model/uploads/1575468289.jpg', 2, 6),
 (56, 12241, ' 			Em ngược đường ngược nắng để yêu anh					Thiếu một nửa tôi đi tìm một nửa					Nước mắt đã rơi, trò chơi kết thúc					Nước mắt đã rơi, trò chơi kết thúc		', '2019-12-05 04:52:52', 'http://localhost/fikveweb1.0.1/model/uploads/1575521564bb474834fff9739b48923ad10e5.png', 0, 0),
-(57, 15, ' 			Một là anh đang nói dối		.<br>			Hai là anh đang nói dối nhiều lần		', '2019-12-05 06:44:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575528247p1.jpg', 0, 0),
-(59, 15, ' 			Em ngược đường ngược nắng để yêu anh		', '2019-12-05 06:56:29', 'http://localhost/fikveweb1.0.1/model/uploads/1575528985p1.jpg', 0, 0);
+(57, 15, ' 			Một là anh đang nói dối		.<br>			Hai là anh đang nói dối nhiều lần		', '2019-12-05 06:44:30', 'http://localhost/fikveweb1.0.1/model/uploads/1575528247p1.jpg', 1, 0),
+(59, 15, ' 			Em ngược đường ngược nắng để yêu anh		', '2019-12-05 06:56:29', 'http://localhost/fikveweb1.0.1/model/uploads/1575528985p1.jpg', 0, 0),
+(64, 15, ' \n			Em ngược đường ngược nắng để yêu anh\n		', '2019-12-11 08:04:11', 'http://localhost/fikveweb1.0.1/library/img/1575528985p1.jpg', 0, 0),
+(65, 15, ' \n			Em ngược đường ngược nắng để yêu anh\n		', '2019-12-11 08:10:04', 'library/img/1_zing.jpg', 0, 0),
+(66, 15, ' \n			Em ngược đường ngược nắng để yêu anh\n		', '2019-12-11 10:06:50', 'library/img/1575371623.jpg', 1, 1),
+(67, 12244, ' \n			Thiếu một nửa tôi đi tìm một nửa\n		', '2019-12-12 03:59:01', 'library/img/1_zing.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -246,7 +307,7 @@ ALTER TABLE `account`
 -- Chỉ mục cho bảng `activeone`
 --
 ALTER TABLE `activeone`
-  ADD PRIMARY KEY (`idactive`),
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idacc` (`idacc`),
   ADD KEY `idtus` (`idtus`);
 
@@ -261,6 +322,12 @@ ALTER TABLE `comment`
 --
 ALTER TABLE `positionuser`
   ADD PRIMARY KEY (`idpos`);
+
+--
+-- Chỉ mục cho bảng `quanhe`
+--
+ALTER TABLE `quanhe`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `sexiusm`
@@ -297,13 +364,13 @@ ALTER TABLE `tuscontent`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12244;
+  MODIFY `idacc` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12245;
 
 --
 -- AUTO_INCREMENT cho bảng `activeone`
 --
 ALTER TABLE `activeone`
-  MODIFY `idactive` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `comment`
@@ -318,10 +385,16 @@ ALTER TABLE `positionuser`
   MODIFY `idpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT cho bảng `quanhe`
+--
+ALTER TABLE `quanhe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `status`
 --
 ALTER TABLE `status`
-  MODIFY `idstatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `idstatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `tuongtac`
@@ -345,13 +418,6 @@ ALTER TABLE `tuscontent`
 ALTER TABLE `account`
   ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`idsex`) REFERENCES `sexiusm` (`idsex`),
   ADD CONSTRAINT `lk_vitri` FOREIGN KEY (`idposition`) REFERENCES `positionuser` (`idpos`);
-
---
--- Các ràng buộc cho bảng `activeone`
---
-ALTER TABLE `activeone`
-  ADD CONSTRAINT `activeone_ibfk_1` FOREIGN KEY (`idacc`) REFERENCES `account` (`idacc`),
-  ADD CONSTRAINT `activeone_ibfk_2` FOREIGN KEY (`idtus`) REFERENCES `status` (`idstatus`);
 
 --
 -- Các ràng buộc cho bảng `status`
